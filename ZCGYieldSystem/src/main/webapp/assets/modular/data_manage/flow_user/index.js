@@ -26,7 +26,6 @@ layui.use(['layer', 'form', 'table', 'ztree', 'laydate', 'admin', 'ax'], functio
                 {field: 'company', sort: true, title: '公司'},
                 {field: 'userName', sort: true, title: '推广专员'},
                 {field: 'appName', sort: true, title: 'app名称'},
-                {field: 'os', sort: true, title: '平台'},
                 {field: 'channelName', sort: true, title: '渠道'},
                 {field: 'date', sort: true, title: '日期' ,minwidth:100},
                 {field: 'flowUserVisitCount', sort: true, title: 'H5独立访客数'},

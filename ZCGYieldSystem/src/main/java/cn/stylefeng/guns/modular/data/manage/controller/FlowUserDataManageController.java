@@ -1,5 +1,6 @@
 package cn.stylefeng.guns.modular.data.manage.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -141,53 +143,122 @@ public class FlowUserDataManageController extends ControllerBase {
 		} else {
 			// 暂不开放非管理员使用该功能
 		}
-		flowUserList = jpaFlowUserRepository.findAllBy(name, company, channel, appName, startTime, endTime,os);
 		
-		List<AppUserAccount> appUserList = 
-				jpaAppUserAccountRepository.findPageByRegisterBetweenDate(startTime, endTime);
-				
 		
+		Long start = System.currentTimeMillis();
+		
+		
+		//sql没有进行分组;如果不带条件查询出全部引流数据;(flow_user表)
+		flowUserList = jpaFlowUserRepository.findAllBy(name, company, channel, appName, startTime, endTime,os,pageable);	
+		//sql没有进行分组;默认查询全部数据(t_user_account表)
+		List<AppUserAccount> appUserList = jpaAppUserAccountRepository.findPageByRegisterBetweenDate(startTime, endTime);				
 		// 数据计算
 		Map<String, DataStatisticalFlowUserVo> tmpMap = new LinkedHashMap<String, DataStatisticalFlowUserVo>();
-		// 1.遍历flowuser的注册用户
+		
+		
+	/**	
+	// 1.遍历flowuser的注册用户
 		for (int i = 0, len = flowUserList.size(); i < len; ++i) {
+			//在map.put之前都是准备map的key
 			DataFlowUserVo dfuv = flowUserList.get(i);
 			String date = DateUtil.format(dfuv.getCreateTime(), "yyyy-MM-dd");
+			//key = 年月日+快借钱包+公用渠道+马上到账+小狗
+			//apk_info.getAppName()+user_url.channelName()+sys_user.getCompany()+sys_user.getUserName();			
 			String key = date + dfuv.getAppName() + dfuv.getChannelName() + dfuv.getCompany() + dfuv.getUserName();
+			
 			DataStatisticalFlowUserVo dsfuv = tmpMap.get(key);
-			// 2,日期不存在，创建
+			//如果map中没有取到数据就添加key为上面几个值的组合,值为循环中的该对象(作用就是马上到账小狗快借钱包公共渠道按天分组)
 			if (dsfuv == null) {
 				dsfuv = new DataStatisticalFlowUserVo(date, 0L);
+				//下面几个参数可以不需要
 				dsfuv.setAppName(dfuv.getAppName());
 				dsfuv.setChannelName(dfuv.getChannelName());
 				dsfuv.setCompany(dfuv.getCompany());
 				dsfuv.setUserName(dfuv.getUserName());
-				
 				tmpMap.put(key,dsfuv);
-			}
-			// 3,flowuser 用户计数加1
-			dsfuv.setFlowUserCount(dsfuv.getFlowUserCount() + 1);
+			}						
+						
+			// 3,flowuser 用户计数加1(作用:分组后引流值加1)
+			dsfuv.setFlowUserCount(dsfuv.getFlowUserCount() + 1);						
 			
-			// 4,遍历appUser的注册用户，比对flowuser的用户是否成功转化
-			for (int j = 0, jLen = appUserList.size(); j < jLen; ++j) {
+			// 4,遍历t_user_account表的注册用户，比对flowuser的用户是否成功转化
+			for (int j = 0, jLen = appUserList.size(); j < jLen; ++j) {				
 				AppUserAccount aua = appUserList.get(j);
 				String registerDate = DateUtil.format(aua.getRegisterTime(), "yyyy-MM-dd");
-				// 5.1 用户转化率加1
+				
+				// 如果手机号码一致,则 用户转化率加1
 				if (dfuv.getPhone().equals(aua.getMobilePhone())) {
-					dsfuv.setRegisterConversionNumber(dsfuv.getRegisterConversionNumber() + 1);
+					//4.1 则 用户转化率加1
+					dsfuv.setRegisterConversionNumber(dsfuv.getRegisterConversionNumber() + 1);				
 					// 4.2 用户同一天转化率加1
 					if (registerDate.equals(date)) {
 						dsfuv.setDateConversionNumber(dsfuv.getDateConversionNumber() + 1);
-					}
-					// 4.相同日期，添加app用户数
+					}			
+					// 4.3 向dsfuv 对象appUsermap(key=手机号码,value=t_user_account表)
 					if (dsfuv.getAppUserMap().get(aua.getMobilePhone()) == null) {
 						dsfuv.setAppUserCount(dsfuv.getAppUserCount() + 1);
 						dsfuv.getAppUserMap().put(aua.getMobilePhone(), aua);
-					}
+					}					
+					// 如果flow_user和t_user_account的手机号码一致就跳出appUserList的for循环;
 					break;
 				}
+				
 			}
-		}
+		}*/
+		
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+			// 1.遍历flowuser的注册用户
+				for (int i = 0, len = flowUserList.size(); i < len; ++i) {
+					//在map.put之前都是准备map的key
+					DataFlowUserVo dfuv = flowUserList.get(i);
+					String date = sdf.format(dfuv.getCreateTime());
+					//key = 年月日+快借钱包+公用渠道+马上到账+小狗
+					//apk_info.getAppName()+user_url.channelName()+sys_user.getCompany()+sys_user.getUserName();	
+					
+					StringBuilder sb = new StringBuilder();
+					String key = sb.append(date).append(dfuv.getAppName()).append(dfuv.getChannelName()).append(dfuv.getCompany()).append(dfuv.getUserName()).toString();
+					DataStatisticalFlowUserVo dsfuv = tmpMap.get(key);
+					//如果map中没有取到数据就添加key为上面几个值的组合,值为循环中的该对象(作用就是马上到账小狗快借钱包公共渠道按天分组)
+					if (dsfuv == null) {
+						dsfuv = new DataStatisticalFlowUserVo(date, 0L);
+						//下面几个参数可以不需要
+						dsfuv.setAppName(dfuv.getAppName());
+						dsfuv.setChannelName(dfuv.getChannelName());
+						dsfuv.setCompany(dfuv.getCompany());
+						dsfuv.setUserName(dfuv.getUserName());
+						tmpMap.put(key,dsfuv);
+					}						
+								
+					// 3,flowuser 用户计数加1(作用:分组后引流值加1)
+					dsfuv.setFlowUserCount(dfuv.getFlowUserCount());						
+					
+					// 4,遍历t_user_account表的注册用户，比对flowuser的用户是否成功转化
+					for (int j = 0, jLen = appUserList.size(); j < jLen; ++j) {				
+						AppUserAccount aua = appUserList.get(j);
+						String registerDate = sdf.format(aua.getRegisterTime());
+						
+						// 如果手机号码一致,则 用户转化率加1
+						if (dfuv.getPhone().equals(aua.getMobilePhone())) {
+							//4.1 则 用户转化率加1
+							dsfuv.setRegisterConversionNumber(dsfuv.getRegisterConversionNumber() + 1);				
+							// 4.2 用户同一天转化率加1
+							if (registerDate.equals(date)) {
+								dsfuv.setDateConversionNumber(dsfuv.getDateConversionNumber() + 1);
+							}			
+							// 4.3 向dsfuv 对象appUsermap(key=手机号码,value=t_user_account表)
+							if (dsfuv.getAppUserMap().get(aua.getMobilePhone()) == null) {
+								dsfuv.setAppUserCount(dsfuv.getAppUserCount() + 1);
+								dsfuv.getAppUserMap().put(aua.getMobilePhone(), aua);
+							}					
+							// 如果flow_user和t_user_account的手机号码一致就跳出appUserList的for循环;
+							break;
+						}
+						
+					}
+				}
+		
+		
 		
 		//h5 独立访问数
 		List<VisitCountVo> flowUserVisitNumberVoList = 
@@ -213,7 +284,8 @@ public class FlowUserDataManageController extends ControllerBase {
 		//添加同一条件下app浏览记录
 		for(int j = 0 ,jLen = appBrowseList.size() ;j < jLen ;++j) {
 			VisitCountVo app = appBrowseList.get(j);
-			String fuvnvoKey = app.getVisitTime() + app.getAppName() + app.getChannelName() + app.getCompany() + app.getUserName();
+			StringBuilder sb = new StringBuilder();
+			String fuvnvoKey = sb.append(app.getVisitTime()).append(app.getAppName()).append(app.getChannelName()).append(app.getCompany() ).append(app.getUserName()).toString();
 			DataStatisticalFlowUserVo dsfuv = tmpMap.get(fuvnvoKey);
 			if(dsfuv != null) {
 				dsfuv.setAppBrowseCount(app.getCount());
@@ -230,6 +302,10 @@ public class FlowUserDataManageController extends ControllerBase {
 		Page<DataStatisticalFlowUserVo> res = new Page<DataStatisticalFlowUserVo>();
 		res.setRecords(resList);
 		res.setTotal(total == null ? 0 : total);
+		
+		Long end = System.currentTimeMillis();
+		System.out.print("sj");
+		System.out.print(end - start);
 		return LayuiPageFactory.createPageInfo(res);
 	}
 	

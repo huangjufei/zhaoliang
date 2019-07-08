@@ -430,16 +430,45 @@ public interface JpaFlowUserRepository extends JpaRepository<FlowUser, Long> {
 			String date, Long userId ,List<Long> allRoleList);
 
 	
+
+	
+	/*
+	 * @Query(
+	 * value="select new cn.stylefeng.guns.modular.core.vo.DataFlowUserVo(fu.id ,fu.phone ,fu.recommendKey "
+	 * +
+	 * " ,fu.channel ,fu.createTime ,fu.registerIpv4 ,fu.os ,u2.userId ,u2.name ,u2.company ,uu.channelName"
+	 * + " ,ai.id ,ai.name,count(*)) " + " from FlowUser as fu " +
+	 * " inner join UserUrl as uu on fu.recommendKey = uu.recommendKey " +
+	 * " and fu.channel = uu.channel and uu.userId in (select u.userId from User as u where u.company like ?2) "
+	 * + " inner join User as u2 on u2.userId = uu.userId " +
+	 * " inner join ApkInfo as ai on ai.name like ?4 and ai.id = uu.appId " +
+	 * " where (fu.phone like ?1 or u2.name like ?1) and fu.channel like ?3 and fu.os like ?7 "
+	 * + " and fu.createTime >= ?5 and fu.createTime <= ?6" +
+	 * "	group by DATE_FORMAT(fu.createTime,'%Y-%m-%d'),ai.name,uu.channelName,u2.company,u2.mame"
+	 * ) List<DataFlowUserVo> findAllBy(String name, String company, String channel,
+	 * String appName, Date startTime, Date endTime, String os);
+	 */
+
+	
 	@Query(value="select new cn.stylefeng.guns.modular.core.vo.DataFlowUserVo(fu.id ,fu.phone ,fu.recommendKey "
 			+ " ,fu.channel ,fu.createTime ,fu.registerIpv4 ,fu.os ,u2.userId ,u2.name ,u2.company ,uu.channelName"
-			+ " ,ai.id ,ai.name) "
+			+ " ,ai.id ,ai.name,count(*)) "
 			+ " from FlowUser as fu "
 			+ " inner join UserUrl as uu on fu.recommendKey = uu.recommendKey "
 			+ " and fu.channel = uu.channel and uu.userId in (select u.userId from User as u where u.company like ?2) "
 			+ " inner join User as u2 on u2.userId = uu.userId "
 			+ " inner join ApkInfo as ai on ai.name like ?4 and ai.id = uu.appId "
 			+ " where (fu.phone like ?1 or u2.name like ?1) and fu.channel like ?3 and fu.os like ?7 "
-			+ " and fu.createTime >= ?5 and fu.createTime <= ?6 ")
+			+ " and fu.createTime >= ?5 and fu.createTime <= ?6 "
+			+ "	group by DATE_FORMAT(fu.createTime,'%Y-%m-%d'),ai.name,uu.channelName,u2.company,u2.name")
+	
 	List<DataFlowUserVo> findAllBy(String name, String company, String channel, String appName, Date startTime,
-			Date endTime, String os);
+			Date endTime, String os,Pageable pageable);
+
+
+	
+	
+	
+	
+	
 }

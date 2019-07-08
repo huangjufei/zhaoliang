@@ -32,6 +32,7 @@ public class DataFlowUserVo {
 	//app info
 	private Integer appId;
 	private String appName;
+	private Long flowUserCount;
 	
 
 	public DataFlowUserVo(Long id, String phone, String recommendKey, String channel, Date createTime,
@@ -91,6 +92,26 @@ public class DataFlowUserVo {
 		this.channelName = channelName;
 		this.appId = appId;
 		this.appName = appName;
+	}
+	
+	public DataFlowUserVo(Long id, String phone, String recommendKey, String channel, Date createTime,
+			String registerIpv4, String os, Long userId, String userName, String company, String channelName
+			,Integer appId, String appName,Long flowUserCount) {
+		super();
+		this.id = id;
+		this.phone = phone;
+		this.recommendKey = recommendKey;
+		this.channel = channel;
+		this.createTime = createTime;
+		this.registerIpv4 = registerIpv4;
+		this.os = os;
+		this.userId = userId;
+		this.userName = userName;
+		this.company = company;
+		this.channelName = channelName;
+		this.appId = appId;
+		this.appName = appName;
+		this.flowUserCount = flowUserCount;
 	}
 	
 	
