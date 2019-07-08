@@ -1,0 +1,313 @@
+@layout("/common/_container.html",{js:["/assets/common/plugins/jquery/jquery-3.2.1.min.js","/assets/modular/data_manage/user_browse/js/DatePicker/WdatePicker.js" ,"/assets/modular/data_manage/user_browse/js/echarts.min.js"]}){
+<style>
+label {
+	line-height: 40px;
+}
+
+.echart-canvas {
+	width: 100%;
+	height: 430px;
+	margin: 0 auto;
+	border: 0;
+}
+
+.header {
+	width: 100%;
+	height: 50px;
+	margin-top: 50px;
+	text-align: center;
+	border: 0;
+}
+
+.baseData_sty {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+.navigator {
+	width: 100%;
+	height: 30px;
+	background: #c3cd3d;
+}
+</style>
+<div class="header">
+	<h2>APP 浏览记录</h2>
+</div>
+<hr>
+<div id="searchCondition">
+	<p class="navigator">--- 条件筛选 ---</p>
+	<span>APP模板: </span> 
+		@for(template in templateList){
+			<input type="checkbox" name="template" value="${template.id}" onclick="asynGetAppVersion(this)" /> ${template.name}
+		@}
+	&nbsp;&nbsp;&nbsp;&nbsp; <label> <span>APP版本: </span> <select
+		id="appVersion">
+			<option value="-1">==请求选择APP版本==</option>
+	</select>
+	</label> &nbsp;&nbsp;&nbsp;&nbsp; <label> <span>channel: </span>
+	 <select id="channel">
+			<option value="-1">==请求选择channel==</option>
+			@for(channel in channelList){
+				<option value="${channel.id}">${channel.name}</option>
+			@}
+	</select>
+	</label> <label> <span>时间: </span> <input class="input-sm"
+		autocomplete="off" type="text" name="startDate" id="startDate"
+		onfocus="WdatePicker({readOnly:false,dateFmt:'yyyy-MM-dd HH:mm:ss'})"
+		style="width: 140px;">至 <input class="input-sm"
+		autocomplete="off" type="text" name="endDate" id="endDate"
+		onfocus="WdatePicker({readOnly:false,dateFmt:'yyyy-MM-dd HH:mm:ss'})"
+		style="width: 140px;">
+	</label>
+	<button onclick="search()">查询</button>
+	<button onclick="exportExcel()">导出</button>
+</div>
+<div id="baseData" class="baseData_sty">
+	<p class="navigator">--- 基本信息 ---</p>
+	<p>
+		当前查询条件浏览总数：<span id="currentSearchConditionCountNumber">0</span> 次 . <span
+			style="font-size: 9px; color: red">*与当前APP版本浏览总数不匹配原因：产品列表缺失，产品列表库中与浏览库中产品不能全部对应；</span>
+	</p>
+	<p>
+		当前APP版本浏览总数：<span id="currentBrowseCountNumber">0</span> 次
+	</p>
+	<p>
+		所有APP版本浏览总数：<span text="${allAppVersionBrowseCountNumber}"></span>
+		次
+	</p>
+</div>
+<div id="">
+	<p class="navigator">--- 图例展示 ---</p>
+	<div id="echart-canvas" class="echart-canvas"></div>
+</div>
+
+
+<script type="text/javascript">
+	function drawUserBrowse(jsonData) {
+		var xDatas = new Array();
+		var yDatas = new Array();
+		//组织数据，并排序
+		for (var i = 0, len = jsonData.length; i < len; ++i) {
+			var temp = jsonData[i];
+			var tempInsertIndex = i;
+
+			if (yDatas.length > 0) {
+				for (var j = 0, jLen = yDatas.length; j < jLen; ++j) {
+					if (yDatas[j] < temp.count) {
+						tempInsertIndex = j;
+						break;
+					}
+				}
+
+				if (tempInsertIndex != i) {
+					//ydatas从tempInsertIndex开始诸葛后移动
+					for (var k = yDatas.length - 1; k >= tempInsertIndex; --k) {
+						yDatas[k + 1] = yDatas[k];
+					}
+					//xdatas从tempInsertIndex开始诸葛后移动
+					for (var k = xDatas.length - 1; k >= tempInsertIndex; --k) {
+						xDatas[k + 1] = xDatas[k];
+					}
+				}
+			}
+
+			xDatas[tempInsertIndex] = temp.name;
+			yDatas[tempInsertIndex] = temp.count;
+		}
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init($('#echart-canvas')[0]);
+		// 指定图表的配置项和数据
+		var option = {
+			legend : {
+				data : [ "浏览记录/次" ]
+			},
+			xAxis : {
+				data : xDatas,
+				axisLabel : {
+					interval : 0,
+					rotate : 40
+				},
+				nameTextStyle : {
+					color : 'black'
+				}
+			},
+			yAxis : {
+				min : 0,
+				minInterval : 1
+			},
+			series : [ {
+				name : "浏览记录/次",
+				type : 'bar',
+				data : yDatas,
+				itemStyle : {
+					normal : {
+						label : {
+							show : true, //开启显示
+							position : 'top', //在上方显示
+							textStyle : { //数值样式
+								color : 'black',
+								fontSize : 16
+							}
+						}
+					}
+				}
+			} ]
+		};
+
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+	}
+
+	function asynGetUserBrowseAndDraw(e) {
+		var $e = $(e);
+		$.ajax({
+			// 请求方式为get或者post等
+			type : "GET",
+			// 服务器响应的数据类型
+			dataType : "json",
+			// 请求的url(一般为后台接口)  
+			url : "/yield/data/userBrowse/appBrowseByAppId.html",
+			// 发送到服务器的参数,      
+			data : {
+				appId : $e.val()
+			},
+			// 请求成功后返回的数据，赋值给变量'data'  
+			success : function(data) {
+				drawUserBrowse(data.browseData);
+				$('#currentBrowseCountNumber').text(data.browseNumber);
+			},
+			// 请求失败异常后，返回的错误信息
+			error : function(err) {
+				alert(err);
+				alert("异常，请重试");
+			}
+		});
+	}
+
+	function removeAppVersion() {
+		var $childrens = $("#appVersion").children();
+		for (var i = $childrens.length - 1; i > 0; --i) {
+			$childrens.eq(i).remove();
+		}
+	}
+
+	function asynGetAppVersion(e) {
+		var $e = $(e);
+		var id = $e.val();
+		$.ajax({
+			// 请求方式为get或者post等
+			type : "GET",
+			contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+			// 服务器响应的数据类型
+			dataType : "json",
+			// 请求的url(一般为后台接口)  
+			url : "/yield/data/userBrowse/getAppVersion.html",
+			// 发送到服务器的参数,      
+			data : {
+				templateId : id
+			},
+			// 请求成功后返回的数据，赋值给变量'data'  
+			success : function(data) {
+				var $appVersion = $("#appVersion");
+				for (var i = data.length - 1; i >= 0; --i) {
+					if ($e["0"].checked) {
+						var $option = $("<option></option>").text(data[i].name)
+								.val(data[i].id);
+						$appVersion.append($option);
+					} else {
+						$appVersion.children("[value='" + data[i].id + "']")
+								.remove();
+					}
+				}
+			},
+			// 请求失败异常后，返回的错误信息
+			error : function(err) {
+				alert(err);
+				alert("异常，请重试");
+			}
+		});
+	}
+
+	function search() {
+		var appId = $("#appVersion").val();
+		var channel = $("#channel").val();
+
+		var $templates = $("input[type='checkbox'][name='template']:checked");
+		if ($templates.length == 0) {
+			alert("至少选择一个APP模板作为搜索条件");
+			return;
+		}
+		var templateId = "";
+		for (var i = 0; i < $templates.length; ++i) {
+			templateId += $templates.eq(i).val() + "_";
+		}
+
+		var startDate = $("#startDate").val();
+		var endDate = $("#endDate").val();
+		var url = "/yield/data/userBrowse/searchBrowse.html";
+		var queryData = {
+			appId : appId,
+			startDate : startDate,
+			endDate : endDate,
+			templateIdStr : templateId,
+			channel : channel
+		};
+
+		asynRequestDataAndDraw(url, queryData);
+	}
+	
+	function exportExcel() {
+		var appId = $("#appVersion").val();
+		var channel = $("#channel").val();
+
+		var $templates = $("input[type='checkbox'][name='template']:checked");
+		if ($templates.length == 0) {
+			alert("至少选择一个APP模板作为搜索条件");
+			return;
+		}
+		var templateId = "";
+		for (var i = 0; i < $templates.length; ++i) {
+			templateId += $templates.eq(i).val() + "_";
+		}
+
+		var startDate = $("#startDate").val();
+		var endDate = $("#endDate").val();
+		var url = "/yield/data/userBrowse/exportExcel.xls";
+
+		//location.href = url + "?appId="+appId +"&startDate="+startDate +"&endDate="+endDate+"&templateIdStr="+templateId
+			//	+"&channel="+channel;
+		window.open(url + "?appId="+appId +"&startDate="+startDate +"&endDate="+endDate+"&templateIdStr="+templateId
+				+"&channel="+channel);
+	}
+
+	function asynRequestDataAndDraw(url, data) {
+		$.ajax({
+			// 请求方式为get或者post等
+			type : "GET",
+			contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+			// 服务器响应的数据类型
+			dataType : "json",
+			// 请求的url(一般为后台接口)  
+			url : url,
+			// 发送到服务器的参数,      
+			data : data,
+			// 请求成功后返回的数据，赋值给变量'data'  
+			success : function(data) {
+				if (data.error) {
+					alert(data.error);
+					return;
+				}
+				drawUserBrowse(data.browseData);
+				$('#currentBrowseCountNumber').text(data.browseNumber);
+				$('#currentSearchConditionCountNumber').text(
+						data.searchConditonBrowseNumber);
+			},
+			// 请求失败异常后，返回的错误信息
+			error : function(err) {
+				alert(err);
+				alert("异常，请重试");
+			}
+		});
+	}
+</script>
+@}

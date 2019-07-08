@@ -1,0 +1,972 @@
+2019-07-05 14:30:17.883  INFO 9748 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 9748 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 14:30:17.890  INFO 9748 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 14:30:17.947  INFO 9748 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 14:30:17.947  INFO 9748 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 14:30:19.573  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.573  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.574  WARN 9748 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:30:19.646  INFO 9748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 14:30:19.808  INFO 9748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153ms. Found 16 repository interfaces.
+2019-07-05 14:30:20.145  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$d094bd73] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:20.209  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:21.877  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:21.881  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$e265dffb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:21.885  INFO 9748 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 14:30:22.104  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.112  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.136  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.144  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.166  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.167  INFO 9748 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 14:30:22.180  INFO 9748 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 14:30:22.184  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.189  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.206  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$713af136] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.239  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.242  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.251  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.251  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:22.321  INFO 9748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$69d4e8e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:30:23.119  INFO 9748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 14:30:23.145  INFO 9748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 14:30:23.145  INFO 9748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 14:30:23.160  INFO 9748 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:\work\utils\jdk1.8.0_191\jre\bin;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 14:30:23.302  INFO 9748 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 14:30:23.302  INFO 9748 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5355 ms
+2019-07-05 14:30:25.372  INFO 9748 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 14:30:25.694  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 14:30:25.697  WARN 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 14:30:25.704  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 14:30:25.705  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 14:30:25.706  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 14:30:25.706  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 14:30:25.706  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 14:30:25.706  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 14:30:25.706  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 14:30:25.706  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 14:30:25.706  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 14:30:25.710  INFO 9748 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 14:30:25.935  INFO 9748 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 14:30:26.016  INFO 9748 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-05 14:30:26.018  INFO 9748 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 14:30:26.179  INFO 9748 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-05 14:30:26.438  INFO 9748 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-05 14:30:34.302  INFO 9748 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-05 14:30:34.337  INFO 9748 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-05 14:30:35.175  INFO 9748 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 14:30:36.090  INFO 9748 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-05 14:30:38.232  WARN 9748 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-05 14:30:38.428  INFO 9748 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-07-05 14:30:38.911  INFO 9748 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 14:30:38.940  INFO 9748 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 14:30:38.973  INFO 9748 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 14:30:39.029  INFO 9748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/yield'
+2019-07-05 14:30:39.032  INFO 9748 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 21.754 seconds (JVM running for 22.529)
+2019-07-05 14:30:39.038  INFO 9748 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2019-07-05 14:40:46.283  INFO 9748 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-05 14:40:46.284  INFO 9748 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-05 14:40:46.321  INFO 9748 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 37 ms
+2019-07-05 14:40:46.364  INFO 9748 --- [http-nio-8081-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2019-07-05 14:42:34.081  INFO 11816 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 11816 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 14:42:34.086  INFO 11816 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 14:42:34.154  INFO 11816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 14:42:34.155  INFO 11816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.909  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.910  WARN 11816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 14:42:35.979  INFO 11816 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 14:42:36.150  INFO 11816 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159ms. Found 16 repository interfaces.
+2019-07-05 14:42:36.499  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$37bb113a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:36.569  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.352  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.357  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$498c33c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.363  INFO 11816 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 14:42:38.674  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.678  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.701  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.709  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.732  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.732  INFO 11816 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 14:42:38.750  INFO 11816 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 14:42:38.752  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.755  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.772  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$d86144fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.813  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.815  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.828  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.828  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:38.924  INFO 11816 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6dc3a255] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 14:42:39.718  INFO 11816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 14:42:39.744  INFO 11816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 14:42:39.745  INFO 11816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 14:42:39.758  INFO 11816 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:\work\utils\jdk1.8.0_191\jre\bin;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 14:42:39.911  INFO 11816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 14:42:39.911  INFO 11816 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5756 ms
+2019-07-05 14:42:41.966  INFO 11816 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 14:42:42.180  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 14:42:42.184  WARN 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 14:42:42.189  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 14:42:42.190  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 14:42:42.191  INFO 11816 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 14:42:42.374  INFO 11816 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 14:42:42.470  INFO 11816 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-05 14:42:42.472  INFO 11816 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 14:42:42.631  INFO 11816 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-05 14:42:42.892  INFO 11816 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-05 14:42:50.567  INFO 11816 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-05 14:42:50.600  INFO 11816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-05 14:42:51.377  INFO 11816 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 14:42:52.429  INFO 11816 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-05 14:42:54.804  WARN 11816 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-05 14:42:55.001  INFO 11816 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-07-05 14:42:55.460  INFO 11816 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 14:42:55.489  INFO 11816 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 14:42:55.520  INFO 11816 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 14:42:55.572  INFO 11816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/yield'
+2019-07-05 14:42:55.576  INFO 11816 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 22.16 seconds (JVM running for 22.939)
+2019-07-05 14:42:55.583  INFO 11816 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2019-07-05 14:45:40.431  INFO 11816 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-05 14:45:40.431  INFO 11816 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-05 14:45:40.446  INFO 11816 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-07-05 14:45:40.460  INFO 11816 --- [http-nio-8081-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2019-07-05 15:00:40.463  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 15:00:40.463  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2019-07-05 15:15:40.462  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 15:15:40.462  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2019-07-05 15:30:40.462  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 15:30:40.462  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2019-07-05 15:45:40.462  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 15:45:40.474  INFO 11816 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  [1] sessions were stopped.
+2019-07-05 15:59:03.139  INFO 16288 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 16288 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 15:59:03.144  INFO 16288 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 15:59:03.200  INFO 16288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 15:59:03.201  INFO 16288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 15:59:04.880  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.881  WARN 16288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 15:59:04.972  INFO 16288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 15:59:05.153  INFO 16288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 169ms. Found 16 repository interfaces.
+2019-07-05 15:59:05.491  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$dd1d82d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:05.557  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.305  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.313  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$eeeea560] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.317  INFO 16288 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 15:59:07.522  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.527  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.550  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.558  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.575  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.576  INFO 16288 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 15:59:07.585  INFO 16288 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 15:59:07.590  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.595  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.613  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$7dc3b69b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.649  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.651  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.662  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.663  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:07.742  INFO 16288 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$132613f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 15:59:08.548  INFO 16288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 15:59:08.575  INFO 16288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 15:59:08.575  INFO 16288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 15:59:08.589  INFO 16288 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:\work\utils\jdk1.8.0_191\jre\bin;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 15:59:08.724  INFO 16288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 15:59:08.724  INFO 16288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5523 ms
+2019-07-05 15:59:10.391  INFO 16288 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 15:59:10.608  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 15:59:10.611  WARN 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 15:59:10.616  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 15:59:10.617  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 15:59:10.618  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 15:59:10.618  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 15:59:10.618  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 15:59:10.618  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 15:59:10.618  INFO 16288 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 15:59:10.807  INFO 16288 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 15:59:10.886  INFO 16288 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-05 15:59:10.887  INFO 16288 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 15:59:11.024  INFO 16288 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-05 15:59:11.251  INFO 16288 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-05 15:59:17.357  INFO 16288 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-05 15:59:17.406  INFO 16288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-05 15:59:18.413  INFO 16288 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 15:59:19.483  INFO 16288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-05 15:59:22.058  WARN 16288 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-05 15:59:22.263  INFO 16288 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-07-05 15:59:22.753  INFO 16288 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 15:59:22.783  INFO 16288 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 15:59:22.820  INFO 16288 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 15:59:22.880  INFO 16288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/yield'
+2019-07-05 15:59:22.883  INFO 16288 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 20.347 seconds (JVM running for 21.082)
+2019-07-05 15:59:22.893  INFO 16288 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2019-07-05 15:59:28.152  INFO 16288 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-05 15:59:28.152  INFO 16288 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-05 15:59:28.178  INFO 16288 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 26 ms
+2019-07-05 15:59:28.202  INFO 16288 --- [http-nio-8081-exec-2] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2019-07-05 16:14:28.204  INFO 16288 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 16:14:28.204  INFO 16288 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2019-07-05 16:29:28.204  INFO 16288 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 16:29:28.204  INFO 16288 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2019-07-05 16:32:27.931  INFO 11196 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 11196 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 16:32:27.936  INFO 11196 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 16:32:28.018  INFO 11196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 16:32:28.018  INFO 11196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 16:32:29.737  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.738  WARN 11196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:32:29.808  INFO 11196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 16:32:29.978  INFO 11196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162ms. Found 16 repository interfaces.
+2019-07-05 16:32:30.338  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$a251378a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:30.410  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.117  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.121  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$b4225a12] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.126  INFO 11196 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 16:32:32.331  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.336  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.366  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.377  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.401  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.403  INFO 11196 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 16:32:32.414  INFO 11196 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 16:32:32.417  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.420  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.441  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$42f76b4d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.485  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.487  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.496  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.497  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:32.571  INFO 11196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d859c8a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:32:33.345  INFO 11196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 16:32:33.373  INFO 11196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 16:32:33.373  INFO 11196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 16:32:33.387  INFO 11196 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:\work\utils\jdk1.8.0_191\jre\bin;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 16:32:33.533  INFO 11196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 16:32:33.534  INFO 11196 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5516 ms
+2019-07-05 16:32:35.286  INFO 11196 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 16:32:35.511  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 16:32:35.514  WARN 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 16:32:35.520  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 16:32:35.520  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 16:32:35.520  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 16:32:35.520  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 16:32:35.520  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 16:32:35.520  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 16:32:35.521  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 16:32:35.522  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 16:32:35.522  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 16:32:35.522  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 16:32:35.522  INFO 11196 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 16:32:35.710  INFO 11196 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 16:32:35.785  INFO 11196 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-05 16:32:35.787  INFO 11196 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 16:32:35.938  INFO 11196 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-05 16:32:36.154  INFO 11196 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-05 16:32:42.059  INFO 11196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-05 16:32:42.094  INFO 11196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-05 16:32:42.900  INFO 11196 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 16:32:43.854  INFO 11196 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-05 16:32:45.991  WARN 11196 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-05 16:32:46.193  INFO 11196 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-07-05 16:32:46.646  INFO 11196 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 16:32:46.675  INFO 11196 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 16:32:46.708  INFO 11196 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 16:32:46.761  INFO 11196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/yield'
+2019-07-05 16:32:46.764  INFO 11196 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 19.549 seconds (JVM running for 20.3)
+2019-07-05 16:32:46.770  INFO 11196 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2019-07-05 16:33:56.279  INFO 11196 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-05 16:33:56.282  INFO 11196 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-05 16:33:56.313  INFO 11196 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 30 ms
+2019-07-05 16:33:56.343  INFO 11196 --- [http-nio-8081-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2019-07-05 16:47:15.993  INFO 5860 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 5860 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 16:47:15.997  INFO 5860 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 16:47:16.063  INFO 5860 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 16:47:16.063  INFO 5860 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 16:47:17.261  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.262  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.262  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.262  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.262  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.262  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.262  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.263  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.263  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.263  WARN 5860 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 16:47:17.319  INFO 5860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 16:47:17.446  INFO 5860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122ms. Found 16 repository interfaces.
+2019-07-05 16:47:17.694  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$85a1e96a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:17.740  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.339  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.343  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$97730bf2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.346  INFO 5860 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 16:47:19.529  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.531  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.548  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.553  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.566  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.566  INFO 5860 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 16:47:19.572  INFO 5860 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 16:47:19.575  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.577  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.589  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$26481d2d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.613  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.615  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.621  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.622  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:19.671  INFO 5860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bbaa7a85] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 16:47:20.218  INFO 5860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 16:47:20.236  INFO 5860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 16:47:20.236  INFO 5860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 16:47:20.245  INFO 5860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 16:47:20.361  INFO 5860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 16:47:20.361  INFO 5860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4298 ms
+2019-07-05 16:47:21.907  INFO 5860 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 16:47:22.100  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 16:47:22.103  WARN 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 16:47:22.107  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 16:47:22.107  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 16:47:22.107  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 16:47:22.108  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 16:47:22.109  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 16:47:22.109  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 16:47:22.109  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 16:47:22.109  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 16:47:22.109  INFO 5860 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 16:47:22.240  INFO 5860 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 16:47:22.292  INFO 5860 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-05 16:47:22.294  INFO 5860 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 16:47:22.408  INFO 5860 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-05 16:47:22.594  INFO 5860 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-05 16:47:28.294  INFO 5860 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-05 16:47:28.322  INFO 5860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-05 16:47:28.862  INFO 5860 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 16:47:29.624  INFO 5860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-05 16:47:31.665  WARN 5860 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-05 16:47:31.837  INFO 5860 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-07-05 16:47:32.211  INFO 5860 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 16:47:32.232  INFO 5860 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 16:47:32.259  INFO 5860 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 16:47:32.303  INFO 5860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/yield'
+2019-07-05 16:47:32.305  INFO 5860 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 16.683 seconds (JVM running for 17.144)
+2019-07-05 16:47:32.311  INFO 5860 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2019-07-05 16:47:56.802  INFO 5860 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-05 16:47:56.802  INFO 5860 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-05 16:47:56.820  INFO 5860 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2019-07-05 16:47:56.836  INFO 5860 --- [http-nio-8081-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2019-07-05 17:02:56.838  INFO 5860 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 17:02:56.838  INFO 5860 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2019-07-05 17:17:56.839  INFO 5860 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2019-07-05 17:17:56.839  INFO 5860 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2019-07-05 17:21:32.005  INFO 5712 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 5712 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 17:21:32.007  INFO 5712 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 17:21:32.065  INFO 5712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 17:21:32.065  INFO 5712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 17:21:33.413  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.413  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.413  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.413  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.414  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.414  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.414  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.414  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.414  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.414  WARN 5712 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:21:33.467  INFO 5712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 17:21:33.600  INFO 5712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126ms. Found 16 repository interfaces.
+2019-07-05 17:21:33.847  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$e65b569d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:33.893  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.469  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.474  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$f82c7925] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.477  INFO 5712 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 17:21:35.606  WARN 5712 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : diskStorePath 'C:\Users\ADMINI~1\AppData\Local\Temp\ehcache' is already used by an existing CacheManager either in the same VM or in a different process.
+The diskStore path for this CacheManager will be set to C:\Users\ADMINI~1\AppData\Local\Temp\ehcache\ehcache_auto_created1509665790174906551diskstore.
+To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
+2019-07-05 17:21:35.728  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.730  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.745  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.750  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.760  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.761  INFO 5712 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 17:21:35.768  INFO 5712 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 17:21:35.770  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.772  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.784  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$87018a60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.810  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.812  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.818  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.818  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:35.872  INFO 5712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1c63e7b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:21:36.492  INFO 5712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 17:21:36.518  INFO 5712 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 17:21:36.518  INFO 5712 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 17:21:36.528  INFO 5712 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 17:21:36.634  INFO 5712 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 17:21:36.634  INFO 5712 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4569 ms
+2019-07-05 17:21:38.195  INFO 5712 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 17:21:38.507  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 17:21:38.920  WARN 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 17:21:38.924  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 17:21:38.925  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 17:21:38.926  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 17:21:38.926  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 17:21:38.926  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 17:21:38.926  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 17:21:38.926  INFO 5712 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 17:21:38.930 ERROR 5712 --- [restartedMain] c.atomikos.persistence.imp.LogFileLock   : ERROR: the specified log seems to be in use already: tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\. Make sure that no other instance is running, or kill any pending process if needed.
+2019-07-05 17:21:38.986  WARN 5712 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b3aaa27]: Constructor threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+2019-07-05 17:21:38.989  INFO 5712 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-07-05 17:21:38.990  INFO 5712 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Shutting down EhCache CacheManager
+2019-07-05 17:21:39.012  INFO 5712 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-07-05 17:21:40.215  INFO 5712 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-05 17:21:40.306 ERROR 5712 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b3aaa27]: Constructor threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1308)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1154)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at cn.stylefeng.guns.GunsApplication.main(GunsApplication.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b3aaa27]: Constructor threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.getIfAvailable(DefaultListableBeanFactory.java:1868)
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.<init>(JpaBaseConfiguration.java:92)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.<init>(HibernateJpaConfiguration.java:100)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b3aaa27.<init>(<generated>)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
+	... 55 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
+	... 69 common frames omitted
+Caused by: com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at com.atomikos.icatch.provider.imp.AssemblerImp.createRepository(AssemblerImp.java:181)
+	at com.atomikos.icatch.provider.imp.AssemblerImp.assembleTransactionService(AssemblerImp.java:156)
+	at com.atomikos.icatch.config.Configuration.assembleSystemComponents(Configuration.java:485)
+	at com.atomikos.icatch.config.Configuration.init(Configuration.java:448)
+	at com.atomikos.icatch.config.UserTransactionServiceImp.initialize(UserTransactionServiceImp.java:105)
+	at com.atomikos.icatch.config.UserTransactionServiceImp.init(UserTransactionServiceImp.java:219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1870)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1813)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741)
+	... 80 common frames omitted
+Caused by: com.atomikos.recovery.LogException: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at com.atomikos.persistence.imp.LogFileLock.acquireLock(LogFileLock.java:59)
+	at com.atomikos.recovery.imp.FileSystemRepository.init(FileSystemRepository.java:55)
+	at com.atomikos.icatch.provider.imp.AssemblerImp.createCoordinatorLogEntryRepository(AssemblerImp.java:229)
+	at com.atomikos.icatch.provider.imp.AssemblerImp.createRepository(AssemblerImp.java:179)
+	... 92 common frames omitted
+
+2019-07-05 17:28:27.706  INFO 13044 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 13044 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 17:28:27.708  INFO 13044 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 17:28:27.768  INFO 13044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 17:28:27.769  INFO 13044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.938  WARN 13044 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:28:28.991  INFO 13044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 17:28:29.119  INFO 13044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122ms. Found 16 repository interfaces.
+2019-07-05 17:28:29.366  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$2fb6acee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:29.411  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.020  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.024  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$4187cf76] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.027  INFO 13044 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 17:28:31.158  WARN 13044 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : diskStorePath 'C:\Users\ADMINI~1\AppData\Local\Temp\ehcache' is already used by an existing CacheManager either in the same VM or in a different process.
+The diskStore path for this CacheManager will be set to C:\Users\ADMINI~1\AppData\Local\Temp\ehcache\ehcache_auto_created6284208085254331498diskstore.
+To avoid this warning consider using the CacheManager factory methods to create a singleton CacheManager or specifying a separate ehcache configuration (ehcache.xml) for each CacheManager instance.
+2019-07-05 17:28:31.201  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.204  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.220  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.225  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.236  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.236  INFO 13044 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 17:28:31.243  INFO 13044 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 17:28:31.245  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.248  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.259  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$d05ce0b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.286  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.288  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.293  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.294  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.346  INFO 13044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$65bf3e09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:28:31.907  INFO 13044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 17:28:31.928  INFO 13044 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 17:28:31.928  INFO 13044 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 17:28:31.938  INFO 13044 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 17:28:32.042  INFO 13044 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 17:28:32.042  INFO 13044 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4273 ms
+2019-07-05 17:28:33.605  INFO 13044 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 17:28:33.796  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 17:28:33.798  WARN 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 17:28:33.802  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 17:28:33.802  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 17:28:33.803  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 17:28:33.804  INFO 13044 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 17:28:33.808 ERROR 13044 --- [restartedMain] c.atomikos.persistence.imp.LogFileLock   : ERROR: the specified log seems to be in use already: tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\. Make sure that no other instance is running, or kill any pending process if needed.
+2019-07-05 17:28:33.809  WARN 13044 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$84960078]: Constructor threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+2019-07-05 17:28:33.811  INFO 13044 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-07-05 17:28:33.812  INFO 13044 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Shutting down EhCache CacheManager
+2019-07-05 17:28:33.824  INFO 13044 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-07-05 17:28:33.833  INFO 13044 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-05 17:28:33.837 ERROR 13044 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$84960078]: Constructor threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1308)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1154)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at cn.stylefeng.guns.GunsApplication.main(GunsApplication.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$84960078]: Constructor threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'transactionManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.getIfAvailable(DefaultListableBeanFactory.java:1868)
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.<init>(JpaBaseConfiguration.java:92)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.<init>(HibernateJpaConfiguration.java:100)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$84960078.<init>(<generated>)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172)
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'atomikosTransactionManager' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Unsatisfied dependency expressed through method 'atomikosTransactionManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
+	... 55 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userTransactionService' defined in class path resource [org/springframework/boot/autoconfigure/transaction/jta/AtomikosJtaConfiguration.class]: Invocation of init method failed; nested exception is com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
+	... 69 common frames omitted
+Caused by: com.atomikos.icatch.SysException: Error in init: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at com.atomikos.icatch.provider.imp.AssemblerImp.createRepository(AssemblerImp.java:181)
+	at com.atomikos.icatch.provider.imp.AssemblerImp.assembleTransactionService(AssemblerImp.java:156)
+	at com.atomikos.icatch.config.Configuration.assembleSystemComponents(Configuration.java:485)
+	at com.atomikos.icatch.config.Configuration.init(Configuration.java:448)
+	at com.atomikos.icatch.config.UserTransactionServiceImp.initialize(UserTransactionServiceImp.java:105)
+	at com.atomikos.icatch.config.UserTransactionServiceImp.init(UserTransactionServiceImp.java:219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1870)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1813)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741)
+	... 80 common frames omitted
+Caused by: com.atomikos.recovery.LogException: Log already in use? tmlog in E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs\
+	at com.atomikos.persistence.imp.LogFileLock.acquireLock(LogFileLock.java:59)
+	at com.atomikos.recovery.imp.FileSystemRepository.init(FileSystemRepository.java:55)
+	at com.atomikos.icatch.provider.imp.AssemblerImp.createCoordinatorLogEntryRepository(AssemblerImp.java:229)
+	at com.atomikos.icatch.provider.imp.AssemblerImp.createRepository(AssemblerImp.java:179)
+	... 92 common frames omitted
+
+2019-07-05 17:29:10.618  INFO 14752 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Starting GunsApplication on KOTIN with PID 14752 (E:\ZCGYieldSystem\ZCGYieldSystem\target\classes started by Administrator in E:\ZCGYieldSystem\ZCGYieldSystem)
+2019-07-05 17:29:10.620  INFO 14752 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : The following profiles are active: pro
+2019-07-05 17:29:10.680  INFO 14752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-05 17:29:10.680  INFO 14752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-05 17:29:11.869  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptMapper' and 'cn.stylefeng.guns.modular.system.mapper.DeptMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.869  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'dictMapper' and 'cn.stylefeng.guns.modular.system.mapper.DictMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.869  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'fileInfoMapper' and 'cn.stylefeng.guns.modular.system.mapper.FileInfoMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.869  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'loginLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.LoginLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.869  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'menuMapper' and 'cn.stylefeng.guns.modular.system.mapper.MenuMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.870  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'noticeMapper' and 'cn.stylefeng.guns.modular.system.mapper.NoticeMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.870  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'operationLogMapper' and 'cn.stylefeng.guns.modular.system.mapper.OperationLogMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.870  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'relationMapper' and 'cn.stylefeng.guns.modular.system.mapper.RelationMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.870  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'cn.stylefeng.guns.modular.system.mapper.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.870  WARN 14752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'cn.stylefeng.guns.modular.system.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2019-07-05 17:29:11.929  INFO 14752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-05 17:29:12.065  INFO 14752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128ms. Found 16 repository interfaces.
+2019-07-05 17:29:12.310  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [cn.stylefeng.guns.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$8be6cfa0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:12.351  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:13.951  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:13.956  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehCacheConfig' of type [cn.stylefeng.guns.config.EhCacheConfig$$EnhancerBySpringCGLIB$$9db7f228] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:13.958  INFO 14752 --- [restartedMain] o.s.c.ehcache.EhCacheManagerFactoryBean  : Initializing EhCache CacheManager
+2019-07-05 17:29:14.130  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.133  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.150  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'gunsProperties' of type [cn.stylefeng.guns.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.155  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.166  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroDbRealm' of type [cn.stylefeng.guns.core.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.167  INFO 14752 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Cache with name 'cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2019-07-05 17:29:14.175  INFO 14752 --- [restartedMain] o.a.shiro.cache.ehcache.EhCacheManager   : Added EhCache named [cn.stylefeng.guns.core.shiro.ShiroDbRealm.authorizationCache]
+2019-07-05 17:29:14.177  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.179  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.192  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'webConfig' of type [cn.stylefeng.guns.config.web.WebConfig$$EnhancerBySpringCGLIB$$2c8d0363] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.216  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.218  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.223  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.223  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.274  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c1ef60bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-05 17:29:14.831  INFO 14752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-05 17:29:14.851  INFO 14752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-05 17:29:14.851  INFO 14752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-05 17:29:14.860  INFO 14752 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\work\utils\jdk1.8.0_191\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;E:/work/utils/jre/bin/server;E:/work/utils/jre/bin;E:/work/utils/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\work\utils\apache-maven-3.5.0\bin;C:\Python26;E:\work\utils\mysql\bin;E:\work\utils\jdk1.8.0_191\bin;d:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;E:\work\utils\eclipse\eclipse;;.]
+2019-07-05 17:29:14.964  INFO 14752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring embedded WebApplicationContext
+2019-07-05 17:29:14.964  INFO 14752 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4284 ms
+2019-07-05 17:29:16.529  INFO 14752 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-07-05 17:29:16.707  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/E:/work/buffers/maven_local_repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-05 17:29:16.710  WARN 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-05 17:29:16.714  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-05 17:29:16.714  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-05 17:29:16.714  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = E:\ZCGYieldSystem\ZCGYieldSystem\transaction-logs
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 192.168.71.1.tm
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-05 17:29:16.715  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2019-07-05 17:29:16.716  INFO 14752 --- [restartedMain] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2019-07-05 17:29:16.865  INFO 14752 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 17:29:16.929  INFO 14752 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-05 17:29:16.930  INFO 14752 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 17:29:17.040  INFO 14752 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-05 17:29:17.211  INFO 14752 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-05 17:29:23.262  INFO 14752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-05 17:29:23.289  INFO 14752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-05 17:29:23.918  INFO 14752 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 17:29:24.649  INFO 14752 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-05 17:29:26.493  WARN 14752 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-05 17:29:26.679  INFO 14752 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-07-05 17:29:27.094  INFO 14752 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 17:29:27.116  INFO 14752 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 17:29:27.145  INFO 14752 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 17:29:27.189  INFO 14752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/yield'
+2019-07-05 17:29:27.192  INFO 14752 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : Started GunsApplication in 16.932 seconds (JVM running for 17.379)
+2019-07-05 17:29:27.196  INFO 14752 --- [restartedMain] cn.stylefeng.guns.GunsApplication        : GunsApplication is success!
+2019-07-05 17:29:39.710  INFO 14752 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/yield]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-05 17:29:39.710  INFO 14752 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-05 17:29:39.727  INFO 14752 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2019-07-05 17:29:39.743  INFO 14752 --- [http-nio-8081-exec-2] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...

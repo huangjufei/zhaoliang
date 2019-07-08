@@ -1,0 +1,72 @@
+@layout("/common/_container.html",{plugins:["ztree"],js:["/assets/modular/data_manage/flow_user_buckle_quantity/index.js"]}){
+
+<div class="layui-body-header">
+    <span class="layui-body-header-title">注册统计</span>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm12 layui-col-md12 layui-col-lg12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form toolbar">
+                        <div class="layui-form-item">  
+                         @if(admin){
+                        	<div class="layui-inline">
+                                <select id="company">
+                               	 	<option value="">渠道商</option>
+                                	@for(company in companyList){
+                                		<option value="${company.name}">${company.name}</option>
+                                	@}
+                                </select>
+                            </div>
+                            <input type="hidden" value="${admin}" id="admin">
+                            <input type="hidden" value="" id="buckle">
+                            @}      
+                            <div class="layui-inline">
+                                <select id="appName">
+                               	 	<option value="">App选择</option>
+                                	@for(app in appList){
+                                		<option value="${app.name}">${app.name}</option>
+                                	@}
+                                </select>
+                            </div>
+                            <div class="layui-inline">
+                                <select id="os" name="os">
+                               	 	<option value="">平台选择</option>
+                                	<option value="android">安卓</option>
+                                	<option value="ios">ios</option>
+                                </select>
+                            </div>
+                        	 <div class="layui-inline">
+	                                <select id="channel">
+	                               	 	<option value="">选择channel</option>
+	                                	@for(channel in channelList){
+	                                		<option value="${channel.id}">${channel.name}</option>
+	                                	@}
+	                                </select>
+	                            </div>
+	                        @if(admin){
+		                        <div class="layui-inline">
+	                                <input id="name" class="layui-input" type="text" placeholder="专员电话/专员名称"/>
+	                            </div>
+                            @}
+                            <div class="layui-inline">
+                                <input id="timeLimit" class="layui-input" type="text" placeholder="注册时间"/>
+                            </div>
+                            <div class="layui-inline">
+                                <button id="btnSearch" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+                                @if(admin){
+                                	<button id="btnShowType" class="layui-btn icon-btn" value="扣量显示"><i class="layui-icon">&#xe615;</i>扣量显示</button>
+                                @}
+                                <button id="btnExp" class="layui-btn icon-btn"><i class="layui-icon">&#xe67d;</i>导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="layui-table" id="table" lay-filter="table"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@}

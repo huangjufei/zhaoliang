@@ -1,0 +1,213 @@
+﻿*{ margin:0px; padding:0px;}
+button {
+  outline: none;
+}
+body{
+   padding-top:0px;
+   background-attachment:fixed;
+   background-color:#ffffff;
+}
+a{text-decoration:none}
+.full_bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+.progress-box {
+  width: 5.4rem;
+  background-color: #ffffff;
+  border-radius: 0.2rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -2.7rem;
+  z-index: 2000;
+  padding-top: 0.5rem;
+  text-align: center;
+  padding-bottom: 0.43rem;
+}
+.progress-box .logo {
+  width: 1.33rem;
+  height: 1.33rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.progress-box .logo img {
+  width: 100%;
+}
+.progress-box .close {
+  width: 0.36rem;
+  height: 0.36rem;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  background: url('../images/close.svg') no-repeat center center;
+  background-size: 100% 100%;
+  display: none;
+}
+.progress-box .client {
+  font-size: 0.3rem;
+  line-height: 0.37rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 0.29rem;
+  margin-bottom: 0.1rem;
+  text-align: center;
+}
+.progress-box .version {
+  color: #999999;
+  font-size: 0.26rem;
+  text-align: center;
+}
+.progress-box .version span {
+  margin-left: 0.2rem;
+}
+.progress-box .loading-box,
+.progress-box .complete-box {
+  font-size: 0.28rem;
+  color: #4b6efe;
+  font-weight: bold;
+}
+.progress-box .loading-box .loadding-text,
+.progress-box .complete-box .loadding-text {
+  margin-left: 0.3rem;
+}
+.progress-box .loading-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+.progress-box .complete-box {
+  display: none;
+  text-align: center;
+}
+.progress-box .complete-box .complete-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.progress-box .complete-box .complete-line .complete-icon {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: url("../fonts/ios-checkmark.svg") no-repeat top center;
+  background-size: 100% 100%;
+  margin-right: -0.2rem;
+}
+.progress-box .complete-box .one-trust {
+  display: inline-block;
+  width: 3.68rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  background-color: #3377ff;
+  border-radius: 40px;
+  font-size: 0.32rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.spanner {
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: -0.1rem;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1.2s steps(12, end) infinite;
+  -o-animation: weuiLoading 1.2s steps(12, end) infinite;
+  animation: weuiLoading 1.2s steps(12, end) infinite;
+  background: url("../images/loading-2.png") no-repeat top center;
+  background-size: 100% 100%;
+}
+@-webkit-keyframes weuiLoading {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+@keyframes weuiLoading {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+.toast-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding: 0.2rem 0.15rem;
+  min-width: 1rem;
+  background: rgba(30, 30, 30, 0.9);
+  text-align: center;
+  color: #fff;
+  font-size: 0.32rem;
+  z-index: 5000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.down-copy-box {
+  text-align: center;
+}
+.product-name {
+  color: #EABC1C;
+  font-size: 0.5rem;
+  font-weight: bold;
+  margin-top: 0.22rem;
+}
+.dowBtn {
+  width: 3.38rem;
+  height: 0.8rem;
+  background-image: linear-gradient(0deg, #EABC1C 0%, #EABC1C 100%), linear-gradient(#EABC10, #EABC10);
+  background-blend-mode: normal,
+  normal;
+  border-radius: 40px;
+  font-size: 0.32rem;
+  color: black;
+  border: 3px solid black;
+  /*margin-top: 0.3rem;*/
+  /*margin-left: 1.93rem;*/
+  display:block;
+  margin:0 auto;
+  font-weight: bold;
+}
+.copy-line {
+  margin-top: 0.5rem;
+}
+.copy-line .down-url {
+  color: #666666;
+  font-size: 0.26rem;
+}
+.copy-line .copy-btn {
+  width: 3.9rem;
+  height: 0.48rem;
+  border-radius: 24px;
+  border: solid 1px #EABC1C;
+  font-size: 0.24rem;
+  color: #EABC1C;
+  margin-top: 0;
+  margin-left: 1.7rem;
+  background: #ffffff;
+}
+
+
+/*# sourceMappingURL=ios_down.css.map */

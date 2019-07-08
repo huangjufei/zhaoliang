@@ -1,0 +1,37 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/core/apk/edit.js"]}){
+<form id="showFrom" lay-filter="showFrom" class="layui-form model-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">名称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="name" name="name" placeholder="请输入姓名" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">介绍</label>
+        <div class="layui-input-block">
+            <input id="description" name="description" type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">平台<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <select id="os" name="os" lay-verify="required" required>
+            	<option value="android">安卓</option>
+            	<option value="ios">ios</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">app</label>
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn" id="apkFile">
+			  <i class="layui-icon">&#xe67c;</i>上传app
+			</button>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" id="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

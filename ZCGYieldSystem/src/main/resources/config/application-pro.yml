@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #外网
+    url: jdbc:mysql://rm-8vbfh2j084gq24u5l0o.mysql.zhangbei.rds.aliyuncs.com:3306/db_flow?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: root
+    password: Chengxu1990

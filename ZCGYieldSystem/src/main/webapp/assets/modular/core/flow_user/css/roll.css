@@ -1,0 +1,113 @@
+ul,li{ margin:0px; padding:0px; }
+		li{ list-style:none; padding：0 10px 0 0; }
+		.container{ display:inline-block; background:#160114e; padding:10px 20px 35px 20px; border:0px solid #ccc; font-family:"Microsoft YaHei"; }
+		.container .li-box{ height:150px; overflow:hidden; }
+		.container ul{  position:relative; animation: moveUp 50s 5s infinite; -webkit-animation: moveUp 50s 5s infinite; }
+		@keyframes moveUp
+		{
+		0% {top:0px;}
+		2% {top:-50px;}
+		4% {top:-50px;}
+		6% {top:-50px;}
+		8% {top:-100px;}
+		10% {top:-100px;}
+		12% {top:-100px;}
+		14% {top:-150px;}
+		16% {top:-150px;}
+		18% {top:-150px;}
+		20% {top:-200px;}
+		22% {top:-200px;}
+		24% {top:-200px;}
+		26% {top:-250px;}
+		28% {top:-250px;}
+		30% {top:-250px;}
+		32% {top:-300px;}
+		34% {top:-300px;}
+		36% {top:-300px;}
+		38% {top:-350px;}
+		40% {top:-350px;}
+		42% {top:-350px;}
+		44% {top:-400px;}
+		46% {top:-400x;}
+		48% {top:-400px;}
+		50% {top:-450px;}
+		52% {top:-450px;}
+		54% {top:-450px;}
+		56% {top:-500px;}
+		58% {top:-500px;}
+		60% {top:-500px;}
+		62% {top:-550px;}
+		64% {top:-550px;}
+		66% {top:-550px;}
+		68% {top:-600px;}
+		70% {top:-600px;}
+		72% {top:-600px;}
+		74% {top:-650px;}
+		76% {top:-650px;}
+		78% {top:-650px;}
+		80% {top:-700px;}
+		82% {top:-700px;}
+		84% {top:-700px;}
+		86% {top:-750px;}
+		88% {top:-750px;}
+		90% {top:-750px;}
+		92% {top:-800px;}
+		94% {top:-800px;}
+		96% {top:-800px;}
+		98% {top:-850px;}
+		100% {top:-850px;}
+		}</p> <p> @-webkit-keyframes moveUp /*Safari and Chrome*/
+		{
+		0% {top:0px;}
+		2% {top:-50px;}
+		4% {top:-50px;}
+		6% {top:-50px;}
+		8% {top:-100px;}
+		10% {top:-100px;}
+		12% {top:-100px;}
+		14% {top:-150px;}
+		16% {top:-150px;}
+		18% {top:-150px;}
+		20% {top:-200px;}
+		22% {top:-200px;}
+		24% {top:-200px;}
+		26% {top:-250px;}
+		28% {top:-250px;}
+		30% {top:-250px;}
+		32% {top:-300px;}
+		34% {top:-300px;}
+		36% {top:-300px;}
+		38% {top:-350px;}
+		40% {top:-350px;}
+		42% {top:-350px;}
+		44% {top:-400px;}
+		46% {top:-400x;}
+		48% {top:-400px;}
+		50% {top:-450px;}
+		52% {top:-450px;}
+		54% {top:-450px;}
+		56% {top:-500px;}
+		58% {top:-500px;}
+		60% {top:-500px;}
+		62% {top:-550px;}
+		64% {top:-550px;}
+		66% {top:-550px;}
+		68% {top:-600px;}
+		70% {top:-600px;}
+		72% {top:-600px;}
+		74% {top:-650px;}
+		76% {top:-650px;}
+		78% {top:-650px;}
+		80% {top:-700px;}
+		82% {top:-700px;}
+		84% {top:-700px;}
+		86% {top:-750px;}
+		88% {top:-750px;}
+		90% {top:-750px;}
+		92% {top:-800px;}
+		94% {top:-800px;}
+		96% {top:-800px;}
+		98% {top:-850px;}
+		100% {top:-850px;}
+		}
+		.container li{ line-height:2.5; color:#ffaa15; }

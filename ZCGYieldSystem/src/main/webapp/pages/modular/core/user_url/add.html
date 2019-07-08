@@ -1,0 +1,74 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/core/user_url/add.js"]}){
+<form id="userForm" lay-filter="userForm" class="layui-form model-form">
+       <div class="layui-form-item">
+        <div class="layui-input-block">
+        </div>
+    </div>
+           <div class="layui-form-item">
+        <div class="layui-input-block">
+        </div>
+    </div>
+           <div class="layui-form-item">
+        <div class="layui-input-block">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">公司<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+              <select id="company" lay-verify="required" lay-filter="company" required>
+        	 	<option value="">选择公司</option>
+	         	@for(company in companyList){
+	         		<option value="${company.name}">${company.name}</option>
+	         	@}
+	         </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+             <select id="user" name="userId">
+	         </select>
+        </div>
+    </div>
+
+	<input hidden="hidden" type="hidden" id="channelName" name="channelName">
+ 	<div class="layui-form-item">
+        <label class="layui-form-label">App渠道<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+              <select id="channel" name="channel" lay-verify="required" lay-filter="channel" required>
+             	@for(channel in channelList){
+             		<option value="${channel.id}">${channel.name}</option>
+             	@}
+             </select>
+            
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">app资源<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <select id="app_sel" name="appId">
+            	@for(apk in apkList){
+            		<option value="${apk.id}">${apk.name}</option>
+            	@}
+            </select>
+        </div>
+    </div>
+       <div class="layui-form-item">
+        <div class="layui-input-block" id="kk">
+        	
+        </div>
+    </div>
+           <div class="layui-form-item">
+        <div class="layui-input-block">
+        </div>
+    </div>
+           <div class="layui-form-item">
+        <div class="layui-input-block">
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" id="btnSubmit" lay-submit>生成链接</button>
+    </div>
+</form>
+@}

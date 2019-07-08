@@ -1,0 +1,41 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/data_manage/buckle_quantity/edit.js"]}){
+<form id="showForm" lay-filter="showForm" class="layui-form model-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">最小显示值</label>
+        <div class="layui-input-block">
+            <input name="showMinData" placeholder="默认为0" value=0 type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">扣量模式</label>
+        <div class="layui-input-block">
+            <select name = "workRestrictedField">
+            	<option value="ratio">百分比</option>
+            	<option value="number">数量</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">扣量值<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="value" name="value" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">时间范围</label>
+        <div class="layui-input-block">
+            <input id="timeLimit" class="layui-input" name="timeLimit" type="text" placeholder="时间限时" lay-verify="required" required/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">扣量说明</label>
+        <div class="layui-input-block">
+            <input name="info"  type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

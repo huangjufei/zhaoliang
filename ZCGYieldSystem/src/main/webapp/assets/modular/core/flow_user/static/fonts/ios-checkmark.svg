@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随意拿呗</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .cnzz-ifr > a {
+            display: none;
+        }
+    </style>
+    <script src="./js/rem.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-box">
+        <div class="logo-box flex-row flex-y-center">
+            <div class="logo">
+                <img style="width: .58rem" src="./images/2019_6_10/logo.png" alt="">
+            </div>
+            <div class="top-line"></div>
+            <div>
+                <div class="product_name">
+                    <p class="title">随意拿呗</p>
+                    <p class="name-Eng">OPTIONAL USE</p>
+                </div>
+            </div>
+        </div>
+        <img style="width:1.99rem" class="positionImg yuan" src="./images/2019_6_10/top-yuan.png" alt="">
+        <img style="width:.65rem" class="positionImg gold" src="./images/2019_6_10/gold.png" alt="">
+        <img style="width:.9rem" class="positionImg small-red-packet" src="./images/2019_6_10/small-red-packet.png" alt="">
+        <img style="width:1.57rem" class="positionImg big-red-packet" src="./images/2019_6_10/big-red-packet.png" alt="">
+        <img style="width:6.68rem" class="positionImg piao_hua" src="./images/2019_6_10/piao_hua.png" alt="">
+        <img style="width:6.53rem" class="positionImg ribbon" src="./images/2019_6_10/ribbon.png" alt="">
+        <img style="width:5.91rem" class="positionImg sysj" src="./images/2019_6_10/sysj.png" alt="">
+        <img style="width:5.61rem" class="positionImg limit" src="./images/2019_6_10/limit.png" alt="">
+    </div>
+    <div class="registerBox">
+        <div class="input-list flex-row">
+            <input id="userPhone" name="phone" type="tel" value="" placeholder="请输入手机号">
+        </div>
+        <!--    <div style="display: none" class="input-list flex-row code_input_list flex-y-center">-->
+        <!--      <input name="sms" value="" class="flex-grow-1" type="number" placeholder="请输入验证码">-->
+        <!--      <div class="line flex-grow-0"></div>-->
+        <!--      <button class="code_btn flex-grow-0">-->
+        <!--        获取验证码-->
+        <!--      </button>-->
+        <!--    </div>-->
+        <button class="registerBtn">领取您的额度</button>
+        <p>注册即同意并接受<a class="Agreement">《服务许可协议》</a></p>
+    </div>
+    
+    
+    <!-- 提示苹果用户在Safari 打开 -->
+    <div class="mark-ifr">
+        <div class="mark"></div>
+        <div class="tips"></div>
+    </div>
+    <!--  toast 文字-->
+    <span class="toast-box hide"></span>
+    
+    <!-- android 下载提示 -->
+    
+    <div class="down-mask"></div>
+    <div class="fixed-bottom">
+        <div class="downBox">
+            <button class="btn down" id="downBtn"
+            >立即下载
+            </button>
+            <button style="display: none" class="btn trust copy-btn">复制链接
+            </button>
+        </div>
+        <div class="down-desc">注：如果无法下载APP,请复制链接前往浏览器点击下载</div>
+    </div>
+
+
+</div>
+
+<!--统计-->
+<div class="cnzz-ifr">
+    <script type="text/javascript" src="https://s96.cnzz.com/z_stat.php?id=1277714673&web_id=1277714673"></script>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="./js/zepto.js"></script>
+<script src="./js/fastclick.js"></script>
+<script>
+
+    $(function () {
+        var apiConfig = {
+            domain: 'http://api.dingenshi.cn',
+            mec_id: '4667c203965a5919ccfa8c7ad188f354',
+            mec_key: '7789c4a2ef67b840395adc77f99c2f2c',
+        };
+        var version = {
+            client: '',
+            h5_version: '1.0.0',
+            api_version: 'v1',
+        };
+        var api = {
+            send_sms: '/send-sms/login-sms',
+            login: '/user/do-login',
+            uv: '/channel/uv',
+            no_code_login:'/user/h5-no-code-login'
+        };
+        var channel = getQueryParam('channel');
+        var phoneReg = /^1[3456789]\d{9}$/;
+        var ua = window.navigator.userAgent.toLowerCase();
+        var androidDownUrl = 'http://android.dingenshi.cn/synb_1_0_0.apk';//安卓下载url
+        // var androidDownUrl='http://xlhbdownload.51empire.com/xlxb_1_1_3.apk';
+        // var androidDownUrl='https://fir.im/uhqy';
+
+        //复制按钮
+        var clipboard = new ClipboardJS('.registerBtn');
+
+
+        var mo = function (e) {
+            e.preventDefault();
+        };
+
+        version.client = getClient();
+
+        ReportedUV();
+        showTip();
+        FastClick.attach(document.body);
+
+        clipboard.on('success', function (e) {
+            if (e.text) {
+                // toast('ok')
+            }
+        });
+        clipboard.on('error', function (e) {
+            // toast('error');
+        });
+
+        //点击登录或注册；
+        $('.registerBtn').on('click', function () {
+            var phone = $("input[name='phone']").val();
+            if (!phone) {
+                toast('请输入手机号');
+                return false
+            }
+            if (!phoneReg.test(phone)) {
+                toast('请输入正确手机号');
+                return false;
+            }
+            // if (!sms) {
+            //   toast('请输入短信验证码');
+            //   return false
+            // }
+
+            var registerBtn = $(this);
+            registerBtn.attr('disabled', 'disabled');
+            var Params = {
+                phone: phone,
+                channel: channel ? channel : '',
+            };
+
+            var RequestParasm = getRequestParams(Params);
+
+
+            $.ajax({
+                type: 'POST',
+                url: apiConfig.domain + '/' + version.api_version + api.no_code_login,
+                data: RequestParasm,
+                success: function (res) {
+                    registerBtn.removeAttr('disabled');
+                    var ResultData = JSON.parse(res);
+                    if (ResultData.error) {
+                        toast(ResultData.info);
+                        return false;
+                    }
+                    downApp();
+                },
+                error: function (error) {
+                    registerBtn.removeAttr('disabled')
+                }
+            })
+
+        });
+
+
+        $('#userPhone').on('input',function (e) {
+            setCopyBtnText($('#userPhone').val())
+        })
+
+        //android 点击下载
+        $('#downBtn').on('click', function () {
+            window.location.href = androidDownUrl;
+        })
+
+        function setCopyBtnText(val) {
+            $('.registerBtn').attr('data-clipboard-text', val);
+        }
+
+        // webapi 复制
+
+        // function copyInputValue(input) {
+        //   const valueLength = input.value.length;
+        //   input.select();
+        //   input.setSelectionRange(0, valueLength);
+        //   return document.execCommand('Copy', false, null);
+        // }
+
+        function getClient() {
+            var sMobileSystem = '';
+
+            if (/(iPhone|iPad|iPod|iOS)/i.test(ua)) {
+                sMobileSystem = 'ios';
+            } else if (/(Android)/i.test(ua)) {
+                sMobileSystem = 'android';
+            }
+
+            return sMobileSystem;
+        }
+
+        // 获取渠道。。。
+        function ReportedUV() {
+            $.ajax({
+                type: 'POST',
+                url: apiConfig.domain + '/' + version.api_version + api.uv,
+                data: getRequestParams({channel: channel}),
+                success: function (res) {
+
+                },
+                error: function (error) {
+
+                }
+            })
+        }
+
+        function downApp() {
+            switch (version.client) {
+                case 'ios':
+                    window.location.href = "ios_down.html";
+
+                    break;
+
+                case 'android':
+                    window.location.href = androidDownUrl;
+
+                    $('.down-mask').show();
+
+                    $('.fixed-bottom').show();
+                    setBodyScroollStop();
+                    break;
+            }
+        }
+
+
+        function toast(text) {
+            $('.toast-box').addClass('show').html(text);
+            setTimeout(function () {
+                $('.toast-box').removeClass('show').html('');
+            }, 2000)
+        }
+
+
+        function getRequestParams(Params) {
+            var RequestParams = {
+                mec_id: apiConfig.mec_id,
+                request_time: Date.parse(new Date()),
+                client: version.client,
+                version: version.h5_version,
+                sign: signature(Params)
+            };
+            return mergeJsonObject(RequestParams, Params);
+        }
+
+        function signature(reqParams) {
+            var nRequestTime = Date.parse(new Date());
+            var sSignString = apiConfig.mec_key + nRequestTime + version.client + version.h5_version;
+
+            for (var key in reqParams) {
+                sSignString += reqParams[key];
+            }
+            return md5(sSignString);
+        };
+
+        function mergeJsonObject(jsonbject1, jsonbject2) {
+            var resultJsonObject = {};
+            for (var attr in jsonbject1) {
+                resultJsonObject[attr] = jsonbject1[attr];
+            }
+            for (var attr in jsonbject2) {
+                resultJsonObject[attr] = jsonbject2[attr];
+            }
+            return resultJsonObject;
+        };
+
+        function getQueryParam(name, url) {
+            var reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i"),
+                Url = url || location.href;
+            if (reg.test(Url))
+                return decodeURI(RegExp.$2.replace(/\+/g, " "));
+            return "";
+        };
+
+        function showTip() {
+            var mark_ifr = $('.mark-ifr');
+            if ((/(iphone|ipad|ipod|ios)/i.test(ua)) && (/micromessenger/.test(ua))) {
+                mark_ifr.show();
+            } else {
+                mark_ifr.hide();
+            }
+        }
+
+        function setBodyScroollStop() {
+            document.body.style.overflow = 'hidden';
+            document.addEventListener("touchmove", mo, {passive: false});//禁止页面滑动
+        }
+
+    });
+</script>
+</body>
+</html>

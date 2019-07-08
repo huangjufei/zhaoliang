@@ -1,0 +1,74 @@
+@layout("/common/_container.html",{plugins:["ztree"],js:["/assets/modular/data_manage/flow_user/index.js"]}){
+
+<div class="layui-body-header">
+    <span class="layui-body-header-title">H5注册列表与转化统计</span>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm12 layui-col-md12 layui-col-lg12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form toolbar">
+                        <div class="layui-form-item">
+                          @if(admin){
+                        	<div class="layui-inline">
+                                <select id="company">
+                               	 	<option value="">渠道商</option>
+                                	@for(company in companyList){
+                                		<option value="${company.name}">${company.name}</option>
+                                	@}
+                                </select>
+                            </div>
+                            <div class="layui-inline">
+                                <select id="appName">
+                               	 	<option value="">App选择</option>
+                                	@for(app in appList){
+                                		<option value="${app.name}">${app.name}</option>
+                                	@}
+                                </select>
+                            </div>
+                             <div class="layui-inline">
+                                <select id="os" name="os">
+                               	 	<option value="">平台选择</option>
+                                	<option value="android">安卓</option>
+                                	<option value="ios">ios</option>
+                                </select>
+                            </div>
+                        	@}
+                        	 <div class="layui-inline">
+	                                <select id="channel">
+	                               	 	<option value="">选择channel</option>
+	                                	@for(channel in channelList){
+	                                		<option value="${channel.id}">${channel.name}</option>
+	                                	@}
+	                                </select>
+	                            </div>
+                            <div class="layui-inline">
+                                <input id="name" class="layui-input" type="text" placeholder="注册电话/专员名称"/>
+                            </div>
+                            <div class="layui-inline">
+                                <input id="timeLimit" class="layui-input" type="text" placeholder="注册时间"/>
+                            </div>
+                            <input type="hidden" value="列表数据" id="show_type" name="显示方式：列表数据、统计数据">
+                            <div class="layui-inline">
+                                <button id="btnSearch" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+                                <button id="btnShow" class="layui-btn icon-btn">统计数据</button>
+                                <button id="btnExp" class="layui-btn icon-btn"><i class="layui-icon">&#xe67d;</i>导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="layui-table" id="table" lay-filter="table"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="tableBar">
+ 	<a class="layui-btn layui-btn-xs" lay-event="dateConversionList">日期转化列表</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="registerConversionList">注册转化列表</a>
+    <a class="layui-btn layui-btn-xs" lay-event="differenceConversionList">差异转化列表</a>
+ 	<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="failedConversionList">未转化列表</a>
+</script>
+@}

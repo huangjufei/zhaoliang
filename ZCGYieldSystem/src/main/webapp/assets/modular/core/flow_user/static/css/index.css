@@ -1,0 +1,297 @@
+﻿body {
+  background: radial-gradient(circle, #ffb727, #ffc85a);
+}
+/*改变输入框placeholder的颜色值*/
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #ccc;
+  font-weight: normal;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+  font-weight: normal;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+  font-weight: normal;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #ccc;
+  font-weight: normal;
+}
+input:focus::-webkit-input-placeholder {
+  color: #ccc;
+  font-weight: normal;
+}
+.top-box {
+  overflow: hidden;
+  width: 7.5rem;
+  height: 7.54rem;
+  position: relative;
+  background-image: linear-gradient(90deg, #ff765b 0%, #fe404b 100%), linear-gradient(#fff8ea, #fff8ea);
+  background-blend-mode: normal,
+  normal;
+  background-image: -moz-radial-gradient(50% 50%, circle closest-side, #ff765b 1%, #fe404b 100%);
+  background-image: -webkit-radial-gradient(50% 50%, circle closest-side, #ff765b 1%, #fe404b 100%);
+  background-image: -ms-radial-gradient(50% 50%, circle closest-side, #ff765b 1%, #fe404b 100%);
+  background-image: radial-gradient(50% 50%, circle closest-side, #ff765b 1%, #fe404b 100%);
+}
+.top-box .logo-box {
+  margin-left: 0.4rem;
+  margin-top: 0.26rem;
+}
+.top-box .logo-box .top-line {
+  width: 1px;
+  height: 0.53rem;
+  background-color: #ffffff;
+  margin: 0 0.2rem;
+}
+.top-box .logo-box .product_name {
+  color: #ffffff;
+}
+.top-box .logo-box .product_name .title {
+  font-weight: bold;
+  font-size: 0.34rem;
+}
+.top-box .logo-box .product_name .name-Eng {
+  font-size: 0.19rem;
+  margin-top: -0.1rem;
+}
+.top-box .positionImg {
+  position: absolute;
+}
+.top-box .yuan {
+  right: 1.86rem;
+  top: 0;
+}
+.top-box .gold {
+  right: 0;
+  top: 2.28rem;
+}
+.top-box .small-red-packet {
+  left: 0;
+  top: 2.4rem;
+}
+.top-box .big-red-packet {
+  right: 0;
+  top: 4.9rem;
+}
+.top-box .piao_hua {
+  left: 0.35rem;
+  top: 1.49rem;
+  z-index: 100;
+}
+.top-box .ribbon {
+  left: 50%;
+  top: 3.9rem;
+  transform: translateX(-50%);
+}
+.top-box .sysj {
+  left: 50%;
+  top: 1.35rem;
+  transform: translateX(-50%);
+}
+.top-box .limit {
+  left: 50%;
+  top: 2.92rem;
+  transform: translateX(-50%);
+}
+.registerBox {
+  position: relative;
+  width: 100%;
+  height: 7.86rem;
+  background: url("../images/bottombg.png") no-repeat top center;
+  background-size: cover;
+  padding-top: 2rem;
+  margin-top: -2.1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.registerBox .input-list {
+  border-radius: 0.1rem;
+  height: 0.98rem;
+  background-color: #ffffff;
+}
+.registerBox .input-list + .input-list {
+  margin-top: 0.2rem;
+}
+.registerBox .input-list.code_input_list {
+  padding-right: 0.3rem;
+}
+.registerBox .input-list.code_input_list .line {
+  width: 1px;
+  height: 0.6rem;
+  background-color: #fbb757;
+  margin-right: 0.3rem;
+}
+.registerBox .input-list.code_input_list .code_btn {
+  height: 100%;
+  background: transparent;
+  border: none;
+  font-size: 0.3rem;
+  font-weight: bold;
+  color: #fbb757;
+}
+.registerBox .input-list.code_input_list .code_btn .time {
+  color: #cccccc;
+}
+.registerBox .input-list.code_input_list .code_btn.active {
+  color: #cccccc;
+}
+.registerBox .input-list input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  padding-left: 0.4rem;
+  font-size: 0.36rem;
+  font-weight: bold;
+  color: #333333;
+}
+.registerBox .registerBtn {
+  width: 6rem;
+  height: 0.98rem;
+  background-color: #fe404b;
+  box-shadow: 0px 4px 9px 0px rgba(254, 64, 75, 0.5);
+  border-radius: 0.49rem;
+  border: none;
+  font-size: 0.36rem;
+  color: #f8e1ae;
+  font-weight: bold;
+  margin-top: 0.6rem;
+}
+.registerBox > p {
+  font-size: 0.24rem;
+  color: #7c5403;
+  text-align: center;
+  margin-top: 0.35rem;
+}
+.registerBox > p a {
+  color: #077cd6;
+  border-bottom: 1px solid #077cd6;
+}
+.toast-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding: 0.2rem 0.15rem;
+  min-width: 1rem;
+  line-height: 0.3rem;
+  background: rgba(30, 30, 30, 0.9);
+  text-align: center;
+  color: #fff;
+  font-size: 0.32rem;
+  z-index: 5000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.toast-box.hide {
+  display: none;
+}
+.toast-box.show {
+  display: block;
+}
+.mark-ifr {
+  width: 100%;
+  overflow: hidden;
+  display: none;
+}
+.mark-ifr .mark {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.mark-ifr .tips {
+  width: 5.8rem;
+  height: 3.1rem;
+  background: url("../images/wechat_tips.png") right top no-repeat;
+  background-size: 100% auto;
+  position: fixed;
+  z-index: 1000;
+  top: 0.05rem;
+  right: 0.2rem;
+}
+/**/
+.fixed-bottom {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  text-align: center;
+  padding-bottom: 0.3rem;
+  z-index: 1000;
+  display: none;
+}
+.downBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0;
+  padding-top: 0.3rem;
+}
+.fixed-bottom .down-desc {
+  font-size: 0.26rem;
+  color: #333;
+  margin-top: 0.34rem;
+}
+.btn {
+  display: inline-block;
+  width: 3rem;
+  height: 0.75rem;
+  font-size: 0.36rem;
+  color: #fff;
+  font-weight: bold;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  line-height: normal;
+}
+.btn + .btn {
+  margin-left: 0.4rem;
+}
+.trust {
+  background-color: #2069ff;
+  box-shadow: 0px 1.5px 5px 0px rgba(75, 129, 239, 0.44);
+  border-radius: 38px;
+}
+.down {
+  background-color: #ff2064;
+  box-shadow: 0px 1.5px 5px 0px rgba(255, 32, 100, 0.44);
+  border-radius: 20px;
+}
+.down-mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+.top-empty-div {
+  height: 2.06rem;
+  display: none;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>${appName}贷款</title>
+    <link rel="stylesheet" href="${ctxPath}/assets/modular/core/flow_user/css/index.css">
+	<link rel="stylesheet" href="${ctxPath}/assets/modular/core/flow_user/css/roll.css">
+</head>
+<body style="background-color:#2537CD">
+<div class="ms_container">
+    <div >
+		<!--logo开始-->
+		<div>
+			<div style="position:absolute; left:8px; top:8px;">
+				<img src="${ctxPath}/assets/modular/core/flow_user/img/logo.png" width="40px" height="40px"/>
+			</div>
+			<span style="display:inline-block;margin-top:17px;margin-left:52px;"><font size="4" color="white" font-family="SimHei"><b>${appName}贷款</b></font></span>
+		</div>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <div class="ms_content_login" >
+            <div class="ms_login_box">
+                
+                <div class="ms_login_info">
+                   
+                </div>
+                <div id="form-center" style="position: relative;">
+                
+                </div>
+                        
+            </div>
+    </div>
+</div>
+<input type="hidden" id="channel" value="${channel}">
+<input type="hidden" id="recommendKey" value="${recommendKey}">
+<input type="hidden" id="resourcesId" value="${resourcesId}">
+<div id="dynamic_ele_home">
+
+	<div class="ms_login_form" id="register_home">
+         <div class="ms_login_form">
+            <div class="ms_login_form_box">
+                <img src="${ctxPath}/assets/modular/core/flow_user/img/icon_01.png" alt="">
+                <input id="phone" class="input" type="number" placeholder="输入手机号码">
+            </div>
+        </div>
+        <div class="ms_login_btn" style="cursor: pointer;">
+            <div class="ms_btn_img" onclick="register()">立即申请贷款</div>
+        </div>
+        <span class="ms_btn_info_s">点击按钮即表示您同意 <span class="color_red"><a href="/yield/fuser/registerAgreement.html" style="text-decoration:none;color:#ffaa15;">《用户协议》</a></span></span>
+    </div>
+</div>
+
+</body>
+
+<!--滚动字幕-->
+	<div id="container" class="container">
+		<div class="li-box">
+			<ul id="userList">
+				<li style="background:#3D45D5; border-radius: 3px;">用户139****2543：今天运气不错啊！下款5000元。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户187****2648：这家不错，申请了四家都通过了审核。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户185****5536：推荐了两个朋友都拿到钱了，是不是该发点儿奖励？</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户183****1523：成功搞到3000块，翻本就靠你啦！</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户185****6622：我借10000来养鸡。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户134****5275：这里确实能借到钱，不过打开页面有点儿慢。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户199****3584：申请了半个小时下款了，还领到了7天免息券。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户152****6891：这个平台还行，比较为急需用钱的人考虑。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户177****6365：申请了三家，放款两家，看起来还不错啊！</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户183****0523：利息比较良心，以后可以长期在这里借钱了。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户199****8778：最近比较缺钱花，来这里借了5000块。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户155****6323：到处都借不了钱却在这里借到了，是我运气变好了吗？</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户158****3321：这里的贷款产品没得说，没遇到过这么好借钱的平台。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户185****9653：利息比较低，以后长期撸。</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户187****6321：下快速度可以啊，杠杠的！</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户187****5532：成功下了10000元，偶也~</li><br/>
+				<li style="background:#3D45D5; border-radius: 3px;">用户183****6783：分期利息比较低，还可以！</li><br/>
+			</ul>
+		</div>
+	</div>
+	<!--滚动字幕-->
+
+<!-- ios安装步骤 -->
+ <div style="margin:0 auto;display:none;" id = "ios_install_step">	
+			<div style="background-color:#EABC1C;text-align:center;margin:0 auto;"><b>第一步</b></div>
+			<div style="margin:0 auto;"><img src="${ctxPath}/assets/modular/core/flow_user/static/picture/course0.png" height="100%" width="100%"></div>
+			<div style="background-color:#EABC1C;text-align:center;margin:0 auto;"><b>第二步</b</div>
+			<div style="margin:0 auto;"><img src="${ctxPath}/assets/modular/core/flow_user/static/picture/course1.png" height="100%" width="100%"></div>
+			<div style="background-color:#EABC1C;text-align:center;margin:0 auto;"><b>第三步</b</div>
+			<div style="margin:0 auto;"><img src="${ctxPath}/assets/modular/core/flow_user/static/picture/course2.png" height="100%" width="100%"></div>
+			<div style="background-color:#EABC1C;text-align:center;margin:0 auto;"><b>第四步</b</div>
+			<div style="margin:0 auto;"><img src="${ctxPath}/assets/modular/core/flow_user/static/picture/course3.png" height="100%" width="100%"></div>
+			<div style="background-color:#EABC1C;text-align:center;margin:0 auto;"><b>第五步</b</div>
+			<div style="margin:0 auto;"><img src="${ctxPath}/assets/modular/core/flow_user/static/picture/course4.png" height="100%" width="100%"></div>
+			<div style="background-color:#EABC1C;text-align:center;margin:0 auto;"><b>第六步</b</div>
+			<div style="margin:0 auto;"><img src="${ctxPath}/assets/modular/core/flow_user/static/picture/course5.png" height="100%" width="100%"></div>
+			<div style="background-color:#EABC1C;text-align:center;margin:0 auto;"><b>第七步</b</div>
+			<div style="margin:0 auto;"><img src="${ctxPath}/assets/modular/core/flow_user/static/picture/course6.png" height="100%" width="100%"></div>
+	</div> 
+
+<script type="text/javascript" src="${ctxPath}/assets/modular/core/flow_user/underscore-min.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/modular/core/flow_user/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/modular/core/flow_user/layer.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/modular/core/flow_user/base64.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/modular/core/flow_user/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/modular/core/flow_user/jquery.countup.min.js"></script>
+<script type="text/javascript">
+
+	function isIos(){
+		 var u = navigator.userAgent, app = navigator.appVersion;
+		 return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	}
+	
+	function register(){
+	    if(!(/^1[0123456789]\d{9}$/.test($("#phone").val()))){ 
+	        alert("手机号码有误，请重填");  
+	        return false; 
+	    }
+		
+		$.ajax({
+			url: "/yield/fuser/register",
+			data:{
+				phone: $("#phone").val() ,
+				channel : $("#channel").val() ,
+				recommendKey : $("#recommendKey").val() ,
+				resourcesId : $("#resourcesId").val() ,
+				os : isIos() ? "ios" : "android"
+						//os : "ios"
+			},
+			success: function(res){
+				var $downloadDiv = ' <div class="ms_login_success"> '
+					+ ' <span class="ms_login_s1">你的借款已经申请成功</span>'
+			        + ' <img class="ms_login_s2" src="${ctxPath}/assets/modular/core/flow_user/img/icon_5.png" alt="">'
+			        + ' <span class="ms_login_s3" >请直接下载登陆APP</span>'
+			        + ' <span class="ms_login_s4" ><span class="color_red">立即提现！</span></span>'
+			        + ' <img class="ms_login_s5"  src="${ctxPath}/assets/modular/core/flow_user/img/icon_6.png" alt=""></span>'
+			        + ' <div class="ms_login_btn2" onclick="location.href=\''+res.data.downloadUrl+'\'" style="cursor: pointer;">立即下载</div>'
+			    	+ ' </div>';
+			    $("#register_home").hide();
+			    $("#dynamic_ele_home").append($downloadDiv);
+			    if(isIos()){
+			    	$("#container").hide();
+			    	$("#ios_install_step").show();
+			    }
+			},
+			error: function(res){
+				alert("错误：" + res.message);
+			}
+		});
+	}
+</script>
+</html>

@@ -1,0 +1,60 @@
+@layout("/common/_container.html",{plugins:["ztree"],js:["/assets/common/plugins/clipboard/dist/clipboard.min.js","/assets/modular/core/user_url/index.js"]}){
+
+<div class="layui-body-header">
+    <span class="layui-body-header-title">推广链接管理</span>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm12 layui-col-md12 layui-col-lg12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form toolbar">
+                        <div class="layui-form-item">
+                        	@if(admin){
+	                        	<div class="layui-inline">
+	                                <select id="company">
+	                               	 	<option value="">选择公司</option>
+	                                	@for(company in companyList){
+	                                		<option value="${company.name}">${company.name}</option>
+	                                	@}
+	                                </select>
+	                            </div>
+	                            <div class="layui-inline">
+                                <select id="appName">
+                               	 	<option value="">App选择</option>
+                                	@for(app in appList){
+                                		<option value="${app.name}">${app.name}</option>
+                                	@}
+                                </select>
+                            	</div>
+	                            <div class="layui-inline">
+	                                <select id="channel">
+	                               	 	<option value="">选择channel</option>
+	                                	@for(channel in channelList){
+	                                		<option value="${channel.id}">${channel.name}</option>
+	                                	@}
+	                                </select>
+	                            </div>
+	                            <div class="layui-inline">
+                                	<input id="name" class="layui-input"  type="text" placeholder="用户名"/>
+                            	</div>
+                        	@}
+                            <div class="layui-inline">
+                            	@if(admin){
+                                <button id="btnSearch" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+                           		@}
+                           		@if(admin){
+                                <button id="btnAdd" class="layui-btn icon-btn"><i class="layui-icon">&#xe654;</i>创建链接</button>
+                                @}
+                                <button id="btnExp" class="layui-btn icon-btn"><i class="layui-icon">&#xe67d;</i>导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="layui-table" id="table" lay-filter="table"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@}

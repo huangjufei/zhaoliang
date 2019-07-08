@@ -1,0 +1,80 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/core/channel_user/detail.js"]}){
+<form id="userForm" lay-filter="userForm" class="layui-form model-form">
+    <input name="userId" type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">账号</label>
+        <div class="layui-input-block">
+            <input name="account"  type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input name="name"  type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期</label>
+        <div class="layui-input-block">
+            <input id="birthday" name="birthday"  type="text" class="layui-input" autocomplete="off"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-block">
+            <input name="email" type="text" class="layui-input" lay-verify="required|email" required />
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block">
+            <input type="text" name="sexName"  class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">角色</label>
+        <div class="layui-input-block">
+            <input type="text" name="roleName" class="layui-input" />
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">渠道/公司</label>
+        <div class="layui-input-block">
+            <input id="company" name="company" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">电话</label>
+        <div class="layui-input-block">
+            <input name="phone"type="text" class="layui-input"/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">QQ</label>
+        <div class="layui-input-block">
+            <input name="qq"  type="text" class="layui-input"/>
+        </div>
+    </div>
+        <div class="layui-form-item">
+        <label class="layui-form-label">微信</label>
+        <div class="layui-input-block">
+            <input name="weixin"  type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建时间</label>
+        <div class="layui-input-block">
+            <input name="createTime"  type="text" class="layui-input"/>
+        </div>
+    </div>
+         <div class="layui-form-item">
+        <label class="layui-form-label">创建人</label>
+        <div class="layui-input-block">
+            <input name="createUserName"  type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+    </div>
+</form>
+@}

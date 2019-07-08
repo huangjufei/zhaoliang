@@ -1,0 +1,67 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/core/channel_master/detail.js"]}){
+<form id=showForm lay-filter="showForm" class="layui-form model-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">名称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input name="name" placeholder="请输入姓名" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">介绍</label>
+        <div class="layui-input-block">
+            <input name="description" type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <input  name="info"type="text" class="layui-input" autocomplete="off"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系人</label>
+        <div class="layui-input-block">
+            <input name="master" type="text" class="layui-input"/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">联系方式</label>
+        <div class="layui-input-block">
+            <input name="masterContact"  type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态</label>
+        <div class="layui-input-block">
+            <input name="status"  type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">更新时间</label>
+        <div class="layui-input-block">
+            <input name="updateTime"  type="text" class="layui-input"/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">创建时间</label>
+        <div class="layui-input-block">
+            <input name="createTime"  type="text" class="layui-input"/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">创建人</label>
+        <div class="layui-input-block">
+            <input name="createName"  type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建人编码</label>
+        <div class="layui-input-block">
+            <input name="createId"  type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+    </div>
+</form>
+@}
