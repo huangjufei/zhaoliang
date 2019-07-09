@@ -34,7 +34,6 @@ layui.use(['layer', 'form', 'table', 'ztree', 'laydate', 'admin', 'ax'], functio
                 {field: 'dateConversionRate', sort: true, title: '登录转化率'},
                 {field: 'appBrowseCount', sort: true, title: '产品点击数'},
                 {field: 'appBrowseRate', sort: true, title: '点击率'},
-                {field: 'registerConversionNumber', sort: true, title: '累计转化数'},
                 {align: 'center', toolbar: '#tableBar', title: '操作', minWidth: 400}
             ]];
     	}

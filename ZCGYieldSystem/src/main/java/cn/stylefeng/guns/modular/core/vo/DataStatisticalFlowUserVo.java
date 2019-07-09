@@ -32,6 +32,7 @@ public class DataStatisticalFlowUserVo {
 	
 	//app用户注册列表
 	private Map<String ,AppUserAccount> appUserMap = new HashMap<String ,AppUserAccount>();
+	
 	public DataStatisticalFlowUserVo(String date, Long flowUserCount) {
 		this.date = date;
 		this.flowUserCount = flowUserCount;
@@ -44,6 +45,17 @@ public class DataStatisticalFlowUserVo {
 			this.appBrowseRate = decimal3(Double.valueOf(appBrowseCount) / appUserCount * 100);
 		}
 	}
+	
+	public void calculateRate2() {
+		this.dateConversionRate = decimal3(Double.valueOf(appUserCount) / flowUserCount * 100);
+		
+		this.registerConversionRate = decimal3(Double.valueOf(registerConversionNumber) / flowUserCount * 100);
+		
+		if(appBrowseCount != null && appUserCount != null && appBrowseCount != 0 && appUserCount != 0) {
+			this.appBrowseRate = decimal3(Double.valueOf(appBrowseCount) / appUserCount * 100);
+		}
+	}
+	
 	
 	private String decimal3(Double f) {
 		 return new BigDecimal(f).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue() + "%";

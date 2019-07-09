@@ -19,7 +19,16 @@ public interface JpaFlowUserVisitNumberRepository extends JpaRepository<FlowUser
 	FlowUserVisitNumber findOneByIpv4AndVisitTime(String visitIpv4, String currentDate);
 
 	/**
+			select DATE_FORMAT(fuvn.visit_time ,'%Y-%m-%d') ,ai.name ,uu.channel_name ,u.company ,u.name ,count(*)
+			from flow_user_visit_number as fuvn
+			inner join user_url as uu on uu.channel = fuvn.channel and uu.recommend_key = fuvn.recommend_key
+			inner join apk_info as ai on ai.name like '%' and ai.id = uu.app_id
+			inner join sys_user as u on (u.name like '%' or u.phone like '%') and u.company like '%'
+			and u.user_id = uu.user_id
+			group by DATE_FORMAT(fuvn.visit_time ,'%Y-%m-%d'),fuvn.channel ,u.company ,u.name ,ai.name
+			ORDER BY DATE_FORMAT(fuvn.visit_time ,'%Y-%m-%d') desc
 	 * 	通过给定条件，查询在每一天内，公司、推广员、渠道、app的h5访问数量
+	 * 
 	 */
 	@Query(value="select new cn.stylefeng.guns.modular.core.vo.VisitCountVo"
 			+ " (DATE_FORMAT(fuvn.visitTime ,'%Y-%m-%d') ,ai.name ,uu.channelName ,u.company ,u.name ,count(*)) "

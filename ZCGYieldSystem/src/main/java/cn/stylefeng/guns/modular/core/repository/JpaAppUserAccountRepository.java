@@ -34,6 +34,17 @@ public interface JpaAppUserAccountRepository extends JpaRepository<AppUserAccoun
 			+ " group by DATE_FORMAT(aua.registerTime,'%Y-%m-%d') , ai.name ,u.name ,u.company ,fu.os ")
 	List<UserBuckleQuantityInfo> findStatistics(String name, String company,String channel 
 			, String appName, Date startTime ,Date endTime, String os,Pageable pageable);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Query(value="select count(*) from AppUserAccount as aua "
 			+ " inner join FlowUser as fu on aua.mobilePhone = fu.phone and fu.os like ?7 "

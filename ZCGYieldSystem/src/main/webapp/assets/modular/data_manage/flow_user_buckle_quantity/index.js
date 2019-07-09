@@ -25,9 +25,8 @@ layui.use(['layer', 'form', 'table', 'ztree', 'laydate', 'admin', 'ax'], functio
 	            {type: 'checkbox',totalRowText: '合计'},
 	            {field: 'appName', sort: true, title: '产品名'},
 	            {field: 'date', sort: true, title: '日期'},
-	            {field: 'number', sort: true, totalRow: true,title: '注册数'},
+	            {field: 'number', sort: true, totalRow: true,title: 'app登录数'},
 	            {field: 'channelName', sort: true, title: 'App渠道'},
-	            {field: 'os', sort: true, title: '平台'},
 	            {field: 'company', sort: true, title: '公司'},
 	            {field: 'userName', sort: true, title: '推广专员'},
 	        ]];
@@ -36,7 +35,6 @@ layui.use(['layer', 'form', 'table', 'ztree', 'laydate', 'admin', 'ax'], functio
 			return [[
 	            {type: 'checkbox',totalRowText: '合计'},
 	            {field: 'appName', sort: true, title: '产品名'},
-	            {field: 'os', sort: true, title: '平台'},
 	            {field: 'channelName', sort: true, title: 'App渠道'},
 	            {field: 'date', sort: true, title: '日期'},
 	            {field: 'number', sort: true, totalRow: true,title: '注册数'},

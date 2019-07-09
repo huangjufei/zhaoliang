@@ -109,7 +109,7 @@ public class FlowUserDataManageController extends ControllerBase {
 			startTime = DateUtil.parse(times[0], startTime);
 			endTime = DateUtil.parse(times[1], endTime);
 		}
-		
+
 		name = name == null || "".equals(name) ? "%" : "%" + name + "%";
 		company = company == null || "".equals(company) ? "%" : company;
 		channel = channel == null || "".equals(channel) ? "%" : channel;
@@ -129,8 +129,8 @@ public class FlowUserDataManageController extends ControllerBase {
 		Long total = 0L;
 
 		if (ShiroKit.isAdmin()) {
-			flowUserList = jpaFlowUserRepository.findPage(name, company, channel, appName, startTime, endTime
-					, os ,pageable);
+			flowUserList = jpaFlowUserRepository.findPage(name, company, channel, appName, startTime, endTime, os,
+					pageable);
 			// 列表数据展示
 			if ("列表数据".equals(showType)) {
 				Page<DataFlowUserVo> res = new Page<DataFlowUserVo>();
@@ -139,178 +139,128 @@ public class FlowUserDataManageController extends ControllerBase {
 				return LayuiPageFactory.createPageInfo(res);
 			}
 			total = (long) jpaFlowUserRepository
-					.findCountGroupByDate(name, company, channel, appName, startTime, endTime ,os).size();
+					.findCountGroupByDate(name, company, channel, appName, startTime, endTime, os).size();
 		} else {
 			// 暂不开放非管理员使用该功能
 		}
-		
-		
+
 		Long start = System.currentTimeMillis();
-		
-		
-		//sql没有进行分组;如果不带条件查询出全部引流数据;(flow_user表)
-		flowUserList = jpaFlowUserRepository.findAllBy(name, company, channel, appName, startTime, endTime,os,pageable);	
-		//sql没有进行分组;默认查询全部数据(t_user_account表)
-		List<AppUserAccount> appUserList = jpaAppUserAccountRepository.findPageByRegisterBetweenDate(startTime, endTime);				
+
+		// sql没有进行分组;如果不带条件查询出全部引流数据;(flow_user表)
+		flowUserList = jpaFlowUserRepository.findAllBy(name, company, channel, appName, startTime, endTime, os,
+				pageable);
+
+		// sql没有进行分组;默认查询全部数据(t_user_account表)
+		List<AppUserAccount> appUserList = jpaAppUserAccountRepository.findPageByRegisterBetweenDate(startTime,
+				endTime);
 		// 数据计算
 		Map<String, DataStatisticalFlowUserVo> tmpMap = new LinkedHashMap<String, DataStatisticalFlowUserVo>();
-		
-		
-	/**	
-	// 1.遍历flowuser的注册用户
-		for (int i = 0, len = flowUserList.size(); i < len; ++i) {
-			//在map.put之前都是准备map的key
-			DataFlowUserVo dfuv = flowUserList.get(i);
-			String date = DateUtil.format(dfuv.getCreateTime(), "yyyy-MM-dd");
-			//key = 年月日+快借钱包+公用渠道+马上到账+小狗
-			//apk_info.getAppName()+user_url.channelName()+sys_user.getCompany()+sys_user.getUserName();			
-			String key = date + dfuv.getAppName() + dfuv.getChannelName() + dfuv.getCompany() + dfuv.getUserName();
-			
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		// 1.遍历flowuser的注册用户
+		for (DataFlowUserVo dfuv : flowUserList) {
+			// 在map.put之前都是准备map的key
+			String date = sdf.format(dfuv.getCreateTime());
+			// key = 年月日+快借钱包+公用渠道+马上到账+小狗
+			// apk_info.getAppName()+user_url.channelName()+sys_user.getCompany()+sys_user.getUserName();
+			StringBuilder sb = new StringBuilder();
+			String key = sb.append(date).append(dfuv.getAppName()).append(dfuv.getChannelName())
+					.append(dfuv.getCompany()).append(dfuv.getUserName()).toString();
 			DataStatisticalFlowUserVo dsfuv = tmpMap.get(key);
-			//如果map中没有取到数据就添加key为上面几个值的组合,值为循环中的该对象(作用就是马上到账小狗快借钱包公共渠道按天分组)
+			// 如果map中没有取到数据就添加key为上面几个值的组合,值为循环中的该对象(作用就是马上到账小狗快借钱包公共渠道按天分组)
 			if (dsfuv == null) {
 				dsfuv = new DataStatisticalFlowUserVo(date, 0L);
-				//下面几个参数可以不需要
+				// 下面几个参数可以不需要
 				dsfuv.setAppName(dfuv.getAppName());
 				dsfuv.setChannelName(dfuv.getChannelName());
 				dsfuv.setCompany(dfuv.getCompany());
 				dsfuv.setUserName(dfuv.getUserName());
-				tmpMap.put(key,dsfuv);
-			}						
-						
+				tmpMap.put(key, dsfuv);
+			}
+
 			// 3,flowuser 用户计数加1(作用:分组后引流值加1)
-			dsfuv.setFlowUserCount(dsfuv.getFlowUserCount() + 1);						
-			
+			dsfuv.setFlowUserCount(dfuv.getFlowUserCount());
+
 			// 4,遍历t_user_account表的注册用户，比对flowuser的用户是否成功转化
-			for (int j = 0, jLen = appUserList.size(); j < jLen; ++j) {				
-				AppUserAccount aua = appUserList.get(j);
-				String registerDate = DateUtil.format(aua.getRegisterTime(), "yyyy-MM-dd");
-				
+			for (AppUserAccount aua : appUserList) {
+				String registerDate = sdf.format(aua.getRegisterTime());
 				// 如果手机号码一致,则 用户转化率加1
 				if (dfuv.getPhone().equals(aua.getMobilePhone())) {
-					//4.1 则 用户转化率加1
-					dsfuv.setRegisterConversionNumber(dsfuv.getRegisterConversionNumber() + 1);				
-					// 4.2 用户同一天转化率加1
-					if (registerDate.equals(date)) {
-						dsfuv.setDateConversionNumber(dsfuv.getDateConversionNumber() + 1);
-					}			
-					// 4.3 向dsfuv 对象appUsermap(key=手机号码,value=t_user_account表)
-					if (dsfuv.getAppUserMap().get(aua.getMobilePhone()) == null) {
-						dsfuv.setAppUserCount(dsfuv.getAppUserCount() + 1);
-						dsfuv.getAppUserMap().put(aua.getMobilePhone(), aua);
-					}					
+					// 4.1 则 用户转化率加1
+					dsfuv.setRegisterConversionNumber(dsfuv.getRegisterConversionNumber() + 1);
+			
+
+					// 4.3 向dsfuv(这个对象在当前for循环外层) appUsermap(key=手机号码,value=t_user_account表)
+					//if (dsfuv.getAppUserMap().get(aua.getMobilePhone()) == null) {
+					//	dsfuv.getAppUserMap().put(aua.getMobilePhone(), aua);
+					//}
 					// 如果flow_user和t_user_account的手机号码一致就跳出appUserList的for循环;
 					break;
 				}
-				
+
 			}
-		}*/
+		}
+
+		// app登錄數
+		List<DataFlowUserVo> appRegisterCounts = jpaFlowUserRepository.appRegisterCount(name, company, channel, appName,
+				startTime, endTime, os, pageable);
+		for (DataFlowUserVo arc : appRegisterCounts) {
+			String date = sdf.format(arc.getCreateTime());
+			StringBuilder sb = new StringBuilder();
+			String key = sb.append(date).append(arc.getAppName()).append(arc.getChannelName()).append(arc.getCompany())
+					.append(arc.getUserName()).toString();
+			DataStatisticalFlowUserVo dsfuv = tmpMap.get(key);
+			if (null != dsfuv) {
+				dsfuv.setAppUserCount(arc.getFlowUserCount());
+			}
+		}
+
+		// h5 独立访问数
+		List<VisitCountVo> flowUserVisitNumberVoList = jpaFlowUserVisitNumberRepository.findDateCountNumberBy(name,
+				company, channel, appName, startTime, endTime, os);
 		
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		
-			// 1.遍历flowuser的注册用户
-				for (int i = 0, len = flowUserList.size(); i < len; ++i) {
-					//在map.put之前都是准备map的key
-					DataFlowUserVo dfuv = flowUserList.get(i);
-					String date = sdf.format(dfuv.getCreateTime());
-					//key = 年月日+快借钱包+公用渠道+马上到账+小狗
-					//apk_info.getAppName()+user_url.channelName()+sys_user.getCompany()+sys_user.getUserName();	
-					
-					StringBuilder sb = new StringBuilder();
-					String key = sb.append(date).append(dfuv.getAppName()).append(dfuv.getChannelName()).append(dfuv.getCompany()).append(dfuv.getUserName()).toString();
-					DataStatisticalFlowUserVo dsfuv = tmpMap.get(key);
-					//如果map中没有取到数据就添加key为上面几个值的组合,值为循环中的该对象(作用就是马上到账小狗快借钱包公共渠道按天分组)
-					if (dsfuv == null) {
-						dsfuv = new DataStatisticalFlowUserVo(date, 0L);
-						//下面几个参数可以不需要
-						dsfuv.setAppName(dfuv.getAppName());
-						dsfuv.setChannelName(dfuv.getChannelName());
-						dsfuv.setCompany(dfuv.getCompany());
-						dsfuv.setUserName(dfuv.getUserName());
-						tmpMap.put(key,dsfuv);
-					}						
-								
-					// 3,flowuser 用户计数加1(作用:分组后引流值加1)
-					dsfuv.setFlowUserCount(dfuv.getFlowUserCount());						
-					
-					// 4,遍历t_user_account表的注册用户，比对flowuser的用户是否成功转化
-					for (int j = 0, jLen = appUserList.size(); j < jLen; ++j) {				
-						AppUserAccount aua = appUserList.get(j);
-						String registerDate = sdf.format(aua.getRegisterTime());
-						
-						// 如果手机号码一致,则 用户转化率加1
-						if (dfuv.getPhone().equals(aua.getMobilePhone())) {
-							//4.1 则 用户转化率加1
-							dsfuv.setRegisterConversionNumber(dsfuv.getRegisterConversionNumber() + 1);				
-							// 4.2 用户同一天转化率加1
-							if (registerDate.equals(date)) {
-								dsfuv.setDateConversionNumber(dsfuv.getDateConversionNumber() + 1);
-							}			
-							// 4.3 向dsfuv 对象appUsermap(key=手机号码,value=t_user_account表)
-							if (dsfuv.getAppUserMap().get(aua.getMobilePhone()) == null) {
-								dsfuv.setAppUserCount(dsfuv.getAppUserCount() + 1);
-								dsfuv.getAppUserMap().put(aua.getMobilePhone(), aua);
-							}					
-							// 如果flow_user和t_user_account的手机号码一致就跳出appUserList的for循环;
-							break;
-						}
-						
-					}
-				}
-		
-		
-		
-		//h5 独立访问数
-		List<VisitCountVo> flowUserVisitNumberVoList = 
-				jpaFlowUserVisitNumberRepository.findDateCountNumberBy(name, company, channel, appName, startTime, endTime,os);
-		
-		
-		//添加同一条件下h5访问数
-		for(int j = 0 ,jLen = flowUserVisitNumberVoList.size() ;j < jLen ;++j) {
-			VisitCountVo fuvnvo = flowUserVisitNumberVoList.get(j);
-			String fuvnvoKey = fuvnvo.getVisitTime() + fuvnvo.getAppName() + fuvnvo.getChannelName() 
-			 + fuvnvo.getCompany() + fuvnvo.getUserName();
+		for (VisitCountVo fuvnvo : flowUserVisitNumberVoList) {
+			String fuvnvoKey = fuvnvo.getVisitTime() + fuvnvo.getAppName() + fuvnvo.getChannelName()
+					+ fuvnvo.getCompany() + fuvnvo.getUserName();
 			DataStatisticalFlowUserVo dsfuv = tmpMap.get(fuvnvoKey);
-			if(dsfuv != null) {
+			if (dsfuv != null) {
 				dsfuv.setFlowUserVisitCount(fuvnvo.getCount());
 			}
 		}
-		
-		
-		//app浏览记录(删除了里面的分组)
-		List<VisitCountVo> appBrowseList = 
-				jpaUserBrowseRepository.findDateCountNumberBy(name,company, channel, appName, startTime, endTime, os);
-		
-		//添加同一条件下app浏览记录
-		for(int j = 0 ,jLen = appBrowseList.size() ;j < jLen ;++j) {
-			VisitCountVo app = appBrowseList.get(j);
+
+		// app浏览记录(删除了里面的分组)
+		List<VisitCountVo> appBrowseList = jpaUserBrowseRepository.findDateCountNumberBy(name, company, channel,
+				appName, startTime, endTime, os);
+
+		for (VisitCountVo app : appBrowseList) {
 			StringBuilder sb = new StringBuilder();
-			String fuvnvoKey = sb.append(app.getVisitTime()).append(app.getAppName()).append(app.getChannelName()).append(app.getCompany() ).append(app.getUserName()).toString();
+			String fuvnvoKey = sb.append(app.getVisitTime()).append(app.getAppName()).append(app.getChannelName())
+					.append(app.getCompany()).append(app.getUserName()).toString();
 			DataStatisticalFlowUserVo dsfuv = tmpMap.get(fuvnvoKey);
-			if(dsfuv != null) {
+			if (dsfuv != null) {
 				dsfuv.setAppBrowseCount(app.getCount());
 			}
 		}
-		
+
 		// 计算比率值
 		for (String date : tmpMap.keySet()) {
 			DataStatisticalFlowUserVo dsfuv = tmpMap.get(date);
-			dsfuv.calculateRate();
+			dsfuv.calculateRate2();
 			resList.add(dsfuv);
 		}
 
 		Page<DataStatisticalFlowUserVo> res = new Page<DataStatisticalFlowUserVo>();
 		res.setRecords(resList);
 		res.setTotal(total == null ? 0 : total);
-		
+
 		Long end = System.currentTimeMillis();
 		System.out.print("sj");
 		System.out.print(end - start);
 		return LayuiPageFactory.createPageInfo(res);
 	}
 	
-	
-	
+
 
 
 	@RequestMapping("/toRegisterConversionList")
@@ -674,14 +624,54 @@ public class FlowUserDataManageController extends ControllerBase {
 
 		} else if (ShiroKit.isAdmin()) {
 			// 管理员不扣量，只是使用以下该数据结构
-			List<UserBuckleQuantityInfo> list = jpaAppUserAccountRepository.findStatistics(name, company, channel,
-					appName, startTime, endTime, os,pageable);
-			Long total = (long) jpaAppUserAccountRepository
-					.findStatisticsCount(name, company,channel, appName,startTime, endTime ,os).size();
+//			List<UserBuckleQuantityInfo> list = jpaAppUserAccountRepository.findStatistics(name, company, channel,
+//					appName, startTime, endTime, os,pageable);
+//			
+//			Long total = (long) jpaAppUserAccountRepository
+//					.findStatisticsCount(name, company,channel, appName,startTime, endTime ,os).size();
+//			
+//			
+			
+			
+			
+			List<UserBuckleQuantityInfo> list = new ArrayList<UserBuckleQuantityInfo>();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			// app登錄數
+				pageable = PageRequest.of(pageInfo.getPage(), pageInfo.getLimit(),
+					Sort.by(Direction.DESC, "createTime"));
+			
+			List<DataFlowUserVo> appRegisterCounts = jpaFlowUserRepository.appRegisterCount(name, company, channel,
+					appName, startTime, endTime, os, pageable);
+			for (DataFlowUserVo arc : appRegisterCounts) {
+				UserBuckleQuantityInfo ubqi = new UserBuckleQuantityInfo();
+				ubqi.setAppName(arc.getAppName());
+				ubqi.setChannelName(arc.getChannelName());
+				ubqi.setCompany(arc.getCompany());
+				ubqi.setDate(sdf.format(arc.getCreateTime()));
+				ubqi.setNumber(arc.getFlowUserCount());
+				ubqi.setUserName(arc.getUserName());
+			
+				list.add(ubqi);
+			}
+		
+			
+			jpaAppUserAccountRepository
+					.findStatisticsCount(name, company, channel, appName, startTime, endTime, os).size();
+			
+			Long total = (long) jpaFlowUserRepository.appRegisterCount(name, company, channel,
+					appName, startTime, endTime, os).size();
+			
+			
 			Page<UserBuckleQuantityInfo> res = new Page<UserBuckleQuantityInfo>();
 			res.setRecords(list);
 			res.setTotal(total == null ? 0 : total);
 			return LayuiPageFactory.createPageInfo(res);
+			
+			
+			
+			
+			
+			
 		} else {
 			String currentCompany = ShiroKit.getUser().getCompany();
         	if(currentCompany == null) {
@@ -809,7 +799,7 @@ public class FlowUserDataManageController extends ControllerBase {
     								|| !iTmp.getOs().equals(jTmp.getOs())) {
     							continue;
     						}
-    						resList.get(j).setNumber(resList.get(j).getNumber() + buckleQuantityList.get(i).getNumber());
+    						resList.get(j).setNumber(7L);
     						continue start;
     					}
     					resList.add(buckleQuantityList.get(i));
@@ -827,6 +817,15 @@ public class FlowUserDataManageController extends ControllerBase {
 		}
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@RequestMapping("/buckle_quantity_index")
 	public ModelAndView buckleQuantityIndex(ModelAndView mav) {
@@ -837,6 +836,8 @@ public class FlowUserDataManageController extends ControllerBase {
 		mav.addObject("channelList", jpaBaseChannelRepository.findMoreByIdGrthan25());
 		return mav;
 	}
+	
+
 
 	/**
 	 * 执行扣量计算
